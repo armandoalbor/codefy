@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Header } from "@/components/landing/header";
+import { Footer } from "@/components/landing/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,19 +18,25 @@ const geistMono = Geist_Mono({
 
 const SITE_URL = "https://codefy.dev";
 
+const DEFAULT_TITLE = "Codefy — Estudio de producto e ingeniería";
+const DEFAULT_DESCRIPTION =
+  "Estudio de producto digital: ingeniería sólida y diseño premium, desde plataformas de telecomunicaciones hasta tu próxima web.";
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Codefy — Landings premium y software a la medida",
-  description:
-    "Creamos landings premium, software a la medida, automatización e IA para negocios que quieren verse mejor, vender más y escalar con tecnología real.",
+  title: {
+    template: "%s — Codefy",
+    default: DEFAULT_TITLE,
+  },
+  description: DEFAULT_DESCRIPTION,
   keywords: [
-    "landing page premium",
+    "estudio de producto",
     "software a la medida",
     "desarrollo web",
-    "SaaS",
-    "automatización",
-    "inteligencia artificial",
-    "product studio",
+    "telecomunicaciones",
+    "PBX",
+    "Asterisk",
+    "landing page premium",
     "Codefy",
   ],
   authors: [{ name: "Codefy" }],
@@ -37,15 +45,13 @@ export const metadata: Metadata = {
     locale: "es_MX",
     url: SITE_URL,
     siteName: "Codefy",
-    title: "Codefy — Landings premium y software a la medida",
-    description:
-      "Diseñamos experiencias digitales modernas para negocios que quieren verse mejor, vender más y escalar con tecnología real.",
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Codefy — Landings premium y software a la medida",
-    description:
-      "Diseñamos experiencias digitales modernas para negocios que quieren verse mejor, vender más y escalar con tecnología real.",
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
   },
 };
 
@@ -59,7 +65,11 @@ export default function RootLayout({
       lang="es"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full">{children}</body>
+      <body className="min-h-full">
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

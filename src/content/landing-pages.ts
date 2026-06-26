@@ -1,9 +1,9 @@
 /**
  * Landing Pages route content — the recycled SMB entry tier.
  *
- * This is a verbatim migration of the original `src/lib/content.ts` copy. No
- * wording changes: the home currently renders this same content while the
- * hub-and-spoke refactor is in progress.
+ * This is a verbatim migration of the studio's original landing copy. No
+ * wording changes: /landing-pages is the recycled SMB entry tier and renders
+ * this content with full fidelity to the pre-reframe home.
  */
 import {
   Sparkles,

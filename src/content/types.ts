@@ -26,6 +26,8 @@ export type FeatureItem = {
   icon: LucideIcon;
   title: string;
   description: string;
+  /** When present, the tile links to a route (used by the services hub). */
+  href?: string;
 };
 
 export type FeatureGridContent = {
@@ -64,7 +66,10 @@ export type FeaturedProject = {
   status: ProjectStatus;
   accent: string;
   accent2: string;
-  metrics: PortfolioMetric[];
+  /** Optional outcome metrics. Omit when no real numbers are available. */
+  metrics?: PortfolioMetric[];
+  /** When present, the featured project links to its detail/spoke route. */
+  href?: string;
 };
 
 export type PortfolioProject = {
@@ -112,6 +117,33 @@ export type FinalCtaContent = {
 };
 
 /**
+ * A single product screenshot in a proof gallery. `src` is the SWAP POINT:
+ * leave it undefined to render a styled placeholder, set it to a real image
+ * path once screenshots exist. No metrics — descriptive captions only.
+ */
+export type ProofShot = {
+  caption: string;
+  src?: string;
+};
+
+/**
+ * Single-product proof block for a spoke (e.g. cc365 on /telecomunicaciones).
+ * Designed to PROVE a live product through real screenshots and descriptive
+ * capabilities — deliberately WITHOUT fabricated metrics.
+ */
+export type SpokeProofContent = {
+  eyebrow?: string;
+  title: string;
+  description: string;
+  /** The product being proven, with its live/soon status badge. */
+  product: { name: string; category: string; status: ProjectStatus };
+  /** Descriptive capability bullets. NO numbers/metrics. */
+  highlights: string[];
+  /** Swap-ready screenshot gallery; placeholders until real shots land. */
+  shots: ProofShot[];
+};
+
+/**
  * Canonical contract for a service "spoke" page (e.g. /telecomunicaciones).
  * Every spoke fills this shape and composes the standard section order.
  */
@@ -120,7 +152,8 @@ export type SpokePageContent = {
   hero: HeroContent;
   capabilities: FeatureGridContent;
   offerings?: ServicesContent;
-  proof: PortfolioContent;
+  /** Optional single-product proof block. Omit on spokes with no live product to show yet. */
+  proof?: SpokeProofContent;
   process?: ProcessContent;
   finalCta: FinalCtaContent;
 };
