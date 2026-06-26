@@ -53,7 +53,7 @@ export const routeCta: Record<string, CtaSpec> = {
 
 export const footerChrome = {
   tagline:
-    "Diseño, software e inteligencia aplicada para negocios que quieren crecer.",
+    "Diseño e ingeniería de producto para negocios que quieren crecer en serio.",
   columns: [
     { label: "Inicio", href: "/" },
     { label: "Landing Pages", href: "/landing-pages" },

@@ -26,6 +26,8 @@ export type FeatureItem = {
   icon: LucideIcon;
   title: string;
   description: string;
+  /** When present, the tile links to a route (used by the services hub). */
+  href?: string;
 };
 
 export type FeatureGridContent = {
@@ -64,7 +66,10 @@ export type FeaturedProject = {
   status: ProjectStatus;
   accent: string;
   accent2: string;
-  metrics: PortfolioMetric[];
+  /** Optional outcome metrics. Omit when no real numbers are available. */
+  metrics?: PortfolioMetric[];
+  /** When present, the featured project links to its detail/spoke route. */
+  href?: string;
 };
 
 export type PortfolioProject = {
