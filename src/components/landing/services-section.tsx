@@ -3,18 +3,20 @@ import { SectionContainer } from "./section-container";
 import { ServiceCard } from "./service-card";
 import { CtaButton } from "./cta-button";
 import { Reveal } from "@/components/ui/reveal";
-import { services, CONTACT_HREF } from "@/lib/content";
+import type { ServicesContent } from "@/content/types";
 
-export function ServicesSection() {
-  const { featured } = services;
+type ServicesSectionProps = { content: ServicesContent };
+
+export function ServicesSection({ content }: ServicesSectionProps) {
+  const { featured } = content;
   const FeaturedIcon = featured.icon;
 
   return (
     <SectionContainer
       id="servicios"
       eyebrow="Servicios"
-      title={services.title}
-      description={services.description}
+      title={content.title}
+      description={content.description}
     >
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-12">
         {/* Featured — protagonist */}
@@ -55,14 +57,16 @@ export function ServicesSection() {
             </ul>
 
             <div className="relative mt-8 pt-2">
-              <CtaButton href={CONTACT_HREF}>{featured.cta}</CtaButton>
+              <CtaButton href={featured.cta.href}>
+                {featured.cta.label}
+              </CtaButton>
             </div>
           </div>
         </Reveal>
 
         {/* Other services — compact stack */}
         <div className="flex flex-col gap-4 lg:col-span-7">
-          {services.others.map((service, i) => (
+          {content.others.map((service, i) => (
             <Reveal key={service.title} from="right" delay={i * 0.08} className="h-full">
               <ServiceCard {...service} />
             </Reveal>

@@ -10,7 +10,7 @@ import {
 import { Spotlight } from "@/components/ui/spotlight";
 import { Reveal } from "@/components/ui/reveal";
 import { NeuralFlow } from "@/components/brand/codefy-pulse";
-import { portfolio } from "@/lib/content";
+import type { PortfolioContent } from "@/content/types";
 import type { ReactNode } from "react";
 
 const previews: Record<string, ReactNode> = {
@@ -19,15 +19,17 @@ const previews: Record<string, ReactNode> = {
   Próximamente: <SoonPreview />,
 };
 
-export function PortfolioSection() {
-  const { featured } = portfolio;
+type PortfolioSectionProps = { content: PortfolioContent };
+
+export function PortfolioSection({ content }: PortfolioSectionProps) {
+  const { featured } = content;
 
   return (
     <SectionContainer
       id="proyectos"
       eyebrow="Portafolio"
-      title={portfolio.title}
-      description={portfolio.description}
+      title={content.title}
+      description={content.description}
     >
       {/* Featured — Anny Studio */}
       <Reveal>
@@ -85,7 +87,7 @@ export function PortfolioSection() {
 
       {/* Secondary grid */}
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {portfolio.projects.map((project, i) => (
+        {content.projects.map((project, i) => (
           <Reveal key={project.name} delay={i * 0.08} className="h-full">
             <ProjectCard {...project} preview={previews[project.name]} />
           </Reveal>

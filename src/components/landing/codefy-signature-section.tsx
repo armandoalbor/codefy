@@ -5,7 +5,9 @@ import { motion, useReducedMotion } from "motion/react";
 import { Logo } from "./logo";
 import { Spotlight } from "@/components/ui/spotlight";
 import { NeuralFlow } from "@/components/brand/codefy-pulse";
-import { signature } from "@/lib/content";
+import type { SignatureContent } from "@/content/types";
+
+type CodefySignatureSectionProps = { content: SignatureContent };
 
 /** The seal, revealed as if it were being signed by hand. */
 function SignatureDraw() {
@@ -67,7 +69,7 @@ function SignatureDraw() {
   );
 }
 
-export function CodefySignatureSection() {
+export function CodefySignatureSection({ content }: CodefySignatureSectionProps) {
   return (
     <section className="relative mx-auto w-full max-w-6xl px-5 py-20 sm:px-6 sm:py-28">
       <div className="group relative grid items-center gap-10 overflow-hidden rounded-[var(--radius-card)] border border-surface-border bg-background-soft p-8 sm:p-12 lg:grid-cols-2 lg:gap-16">
@@ -80,10 +82,10 @@ export function CodefySignatureSection() {
             El sello Codefy
           </span>
           <h2 className="mt-4 text-balance text-3xl font-semibold leading-[1.12] tracking-tight text-text-primary sm:text-4xl">
-            {signature.title}
+            {content.title}
           </h2>
           <div className="mt-5 space-y-1">
-            {signature.story.map((line) => (
+            {content.story.map((line) => (
               <p
                 key={line}
                 className="text-lg font-medium leading-snug text-text-primary"
@@ -93,7 +95,7 @@ export function CodefySignatureSection() {
             ))}
           </div>
           <p className="mt-4 text-pretty text-base leading-relaxed text-text-secondary">
-            {signature.description}
+            {content.description}
           </p>
           <NeuralFlow tone="violet" className="mt-8 hidden h-8 w-56 opacity-75 lg:block" />
         </div>
