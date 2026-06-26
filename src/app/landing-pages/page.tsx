@@ -3,19 +3,20 @@ import { HeroSection } from "@/components/landing/hero-section";
 import { PositioningSection } from "@/components/landing/positioning-section";
 import { ServicesSection } from "@/components/landing/services-section";
 import { PortfolioSection } from "@/components/landing/portfolio-section";
+import { CodefySignatureSection } from "@/components/landing/codefy-signature-section";
 import { ProcessSection } from "@/components/landing/process-section";
 import { FinalCtaSection } from "@/components/landing/final-cta-section";
-import { homeContent } from "@/content/home";
+import { landingPagesContent } from "@/content/landing-pages";
 
 export const metadata: Metadata = {
-  title: { absolute: "Codefy — Estudio de producto e ingeniería" },
+  title: "Landing Pages Premium",
   description:
-    "Estudio de producto digital: ingeniería sólida y diseño premium, desde plataformas de telecomunicaciones hasta tu próxima web.",
-  alternates: { canonical: "/" },
+    "Landings rápidas, elegantes y orientadas a conversión para validar, vender o presentar tu negocio de forma profesional.",
+  alternates: { canonical: "/landing-pages" },
 };
 
-export default function Home() {
-  const content = homeContent;
+export default function LandingPagesPage() {
+  const content = landingPagesContent;
 
   return (
     <main>
@@ -23,6 +24,7 @@ export default function Home() {
       <PositioningSection content={content.positioning} />
       <ServicesSection content={content.services} />
       <PortfolioSection content={content.portfolio} />
+      <CodefySignatureSection content={content.signature} />
       <ProcessSection content={content.process} />
       <FinalCtaSection content={content.finalCta} />
     </main>

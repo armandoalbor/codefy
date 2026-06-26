@@ -1,6 +1,7 @@
+import Link from "next/link";
 import { Heart } from "lucide-react";
 import { Logo } from "./logo";
-import { footer } from "@/lib/content";
+import { footerChrome } from "@/content/shared";
 
 export function Footer() {
   return (
@@ -11,7 +12,7 @@ export function Footer() {
           <div className="max-w-sm">
             <Logo />
             <p className="mt-4 text-sm leading-relaxed text-text-secondary">
-              {footer.tagline}
+              {footerChrome.tagline}
             </p>
           </div>
 
@@ -19,14 +20,14 @@ export function Footer() {
             <span className="font-mono text-[0.65rem] uppercase tracking-[0.18em] text-text-muted">
               Navegación
             </span>
-            {footer.columns.map((col) => (
-              <a
+            {footerChrome.columns.map((col) => (
+              <Link
                 key={col.href}
                 href={col.href}
                 className="text-sm text-text-secondary transition-colors hover:text-text-primary"
               >
                 {col.label}
-              </a>
+              </Link>
             ))}
           </nav>
         </div>
@@ -34,7 +35,7 @@ export function Footer() {
         <div className="divider-glow my-10" />
 
         <div className="flex flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
-          <p className="text-xs text-text-muted">{footer.legal}</p>
+          <p className="text-xs text-text-muted">{footerChrome.legal}</p>
           <span className="inline-flex items-center gap-1.5 text-xs text-text-muted">
             Hecho con
             <Heart className="size-3 fill-accent text-accent" />
