@@ -1,26 +1,32 @@
 import type { Metadata } from "next";
-import { ComingSoon } from "@/components/landing/coming-soon";
-import { routeCta } from "@/content/shared";
+import { HeroSection } from "@/components/landing/hero-section";
+import { TelecomCapabilities } from "@/components/landing/telecom-capabilities";
+import { TelecomProof } from "@/components/landing/telecom-proof";
+import { FinalCtaSection } from "@/components/landing/final-cta-section";
+import { telecomContent } from "@/content/telecomunicaciones";
 
 export const metadata: Metadata = {
-  title: "Telecomunicaciones — Asterisk, PBX y Call Centers",
-  description:
-    "Plataformas de telefonía, PBX con Asterisk, call centers y comunicación omnicanal (voz y WhatsApp). Hablemos de tu proyecto enterprise.",
-  alternates: { canonical: "/telecomunicaciones" },
+  title: telecomContent.meta.title,
+  description: telecomContent.meta.description,
+  alternates: { canonical: telecomContent.meta.canonical },
 };
 
 /**
- * Interim telecom landing. Resolves the flagship route linked from the home and
- * header (no 404) with a telecom-scoped hero and the enterprise CTA. The full
- * spoke composition (capabilities grid + cc365 proof) is the next iteration.
+ * /telecomunicaciones — the hero-niche spoke. Server Component (exports
+ * metadata) composing the standard spoke order: hero → capabilities → cc365
+ * proof → final CTA. Icon-bearing slices (capabilities, proof) are fed to
+ * server section components only; the icon-free hero goes to the client
+ * HeroSection. Copy is approved verbatim; proof carries no fabricated metrics.
  */
 export default function TelecomunicacionesPage() {
+  const content = telecomContent;
+
   return (
-    <ComingSoon
-      eyebrow="Telecomunicaciones"
-      title="Telefonía, PBX y call centers a la medida"
-      description="Construimos plataformas de telecomunicaciones de verdad: PBX con Asterisk, call centers, IVR, grabación y comunicación omnicanal por voz y WhatsApp. Es nuestra especialidad técnica más profunda, ya en producción. Cuéntanos qué necesita tu operación."
-      cta={routeCta["/telecomunicaciones"]}
-    />
+    <main>
+      <HeroSection content={content.hero} />
+      <TelecomCapabilities content={content.capabilities} />
+      <TelecomProof content={content.proof} />
+      <FinalCtaSection content={content.finalCta} />
+    </main>
   );
 }
