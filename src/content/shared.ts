@@ -20,6 +20,9 @@ export const whatsappMessages = {
   landing: "Hola Codefy, quiero cotizar una landing",
   general: "Hola Codefy, quiero hablar de mi proyecto",
   telecom: "Hola Codefy, quiero agendar una demo de telecomunicaciones",
+  software: "Hola Codefy, quiero hablar de un software a la medida",
+  apps: "Hola Codefy, quiero hablar de una app móvil",
+  seo: "Hola Codefy, quiero mejorar el SEO de mi sitio",
 } as const;
 
 /** Landing-specific contact link — preserves the original CONTACT_HREF value. */
@@ -32,9 +35,9 @@ export const siteNav: NavEntry[] = [
   { label: "Inicio", href: "/" },
   { label: "Landing Pages", href: "/landing-pages" },
   { label: "Telecomunicaciones", href: "/telecomunicaciones" },
-  { label: "Software", href: "/software-a-la-medida", soon: true },
-  { label: "Apps", href: "/apps-moviles", soon: true },
-  { label: "SEO", href: "/seo-optimizacion", soon: true },
+  { label: "Software", href: "/software-a-la-medida" },
+  { label: "Apps", href: "/apps-moviles" },
+  { label: "SEO", href: "/seo-optimizacion" },
 ];
 
 /** Primary CTA per route, keyed by pathname. */
@@ -47,6 +50,18 @@ export const routeCta: Record<string, CtaSpec> = {
   "/telecomunicaciones": {
     label: "Cuéntanos tu operación",
     href: buildWhatsApp(whatsappMessages.telecom),
+  },
+  "/software-a-la-medida": {
+    label: "Cuéntanos tu proyecto",
+    href: buildWhatsApp(whatsappMessages.software),
+  },
+  "/apps-moviles": {
+    label: "Cuéntanos tu idea",
+    href: buildWhatsApp(whatsappMessages.apps),
+  },
+  "/seo-optimizacion": {
+    label: "Auditemos tu sitio",
+    href: buildWhatsApp(whatsappMessages.seo),
   },
 };
 

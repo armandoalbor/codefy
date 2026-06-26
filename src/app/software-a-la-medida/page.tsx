@@ -1,19 +1,30 @@
 import type { Metadata } from "next";
-import { ComingSoon } from "@/components/landing/coming-soon";
+import { HeroSection } from "@/components/landing/hero-section";
+import { SpokeCapabilities } from "@/components/landing/spoke-capabilities";
+import { FinalCtaSection } from "@/components/landing/final-cta-section";
+import { softwareContent } from "@/content/software-a-la-medida";
 
 export const metadata: Metadata = {
-  title: "Software a la medida",
-  description:
-    "Aplicaciones web, dashboards y plataformas SaaS construidas con ingeniería sólida. Página en construcción — hablemos de tu proyecto.",
-  alternates: { canonical: "/software-a-la-medida" },
+  title: softwareContent.meta.title,
+  description: softwareContent.meta.description,
+  alternates: { canonical: softwareContent.meta.canonical },
 };
 
+/**
+ * /software-a-la-medida — service spoke. Server Component (exports metadata)
+ * composing the spoke order: hero → capabilities → final CTA. No proof block:
+ * there is no live product to show yet. Icon-bearing capabilities are fed to a
+ * server section component only; the icon-free hero goes to the client
+ * HeroSection. Copy is approved verbatim.
+ */
 export default function SoftwareALaMedidaPage() {
+  const content = softwareContent;
+
   return (
-    <ComingSoon
-      eyebrow="Software a la medida · Próximamente"
-      title="Plataformas y software a la medida"
-      description="Estamos preparando esta sección. Mientras tanto, ya construimos aplicaciones web, dashboards y sistemas a la medida con arquitectura escalable. Cuéntanos qué necesitas y lo construimos."
-    />
+    <main>
+      <HeroSection content={content.hero} />
+      <SpokeCapabilities content={content.capabilities} />
+      <FinalCtaSection content={content.finalCta} />
+    </main>
   );
 }
