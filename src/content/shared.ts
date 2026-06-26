@@ -40,12 +40,12 @@ export const siteNav: NavEntry[] = [
 /** Primary CTA per route, keyed by pathname. */
 export const routeCta: Record<string, CtaSpec> = {
   "/": {
-    label: "Hablemos de tu proyecto",
+    label: "Cuéntanos tu proyecto",
     href: buildWhatsApp(whatsappMessages.general),
   },
   "/landing-pages": { label: "Cotizar landing", href: contactHrefLanding },
   "/telecomunicaciones": {
-    label: "Agendar demo",
+    label: "Cuéntanos tu operación",
     href: buildWhatsApp(whatsappMessages.telecom),
   },
 };
