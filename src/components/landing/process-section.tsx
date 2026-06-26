@@ -1,16 +1,18 @@
 import { SectionContainer } from "./section-container";
 import { Reveal } from "@/components/ui/reveal";
-import { process } from "@/lib/content";
+import type { ProcessContent } from "@/content/types";
 
-export function ProcessSection() {
+type ProcessSectionProps = { content: ProcessContent };
+
+export function ProcessSection({ content }: ProcessSectionProps) {
   return (
-    <SectionContainer id="proceso" eyebrow="Proceso" title={process.title}>
+    <SectionContainer id="proceso" eyebrow="Proceso" title={content.title}>
       <div className="relative">
         {/* connecting line (desktop) */}
         <div className="divider-glow absolute left-0 right-0 top-7 hidden lg:block" />
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
-          {process.steps.map((step, i) => {
+          {content.steps.map((step, i) => {
             const Icon = step.icon;
             return (
               <Reveal key={step.number} delay={i * 0.1} from="up">

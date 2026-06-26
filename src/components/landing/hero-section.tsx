@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from "react";
 import { motion } from "motion/react";
 import { CtaButton } from "./cta-button";
 import { HeroShowcase } from "./hero-showcase";
@@ -8,7 +9,13 @@ import { Magnetic } from "@/components/ui/magnetic";
 import { LightBeams } from "@/components/brand/light-beams";
 import { AmbientParticles } from "@/components/brand/ambient-particles";
 import { NeuralFlow } from "@/components/brand/codefy-pulse";
-import { hero, CONTACT_HREF } from "@/lib/content";
+import type { HeroContent } from "@/content/types";
+
+type HeroSectionProps = {
+  content: HeroContent;
+  /** Optional visual slot; defaults to the standard product showcase. */
+  showcase?: ReactNode;
+};
 
 const container = {
   hidden: {},
@@ -26,7 +33,9 @@ const item = {
   },
 };
 
-export function HeroSection() {
+export function HeroSection({ content, showcase }: HeroSectionProps) {
+  const supporting = content.supporting ?? [];
+
   return (
     <section
       id="top"
@@ -61,22 +70,22 @@ export function HeroSection() {
             className="inline-flex items-center gap-2 rounded-full border border-surface-border bg-surface px-3.5 py-1.5 font-mono text-[0.7rem] uppercase tracking-[0.18em] text-text-secondary backdrop-blur"
           >
             <span className="size-1.5 rounded-full bg-accent-2 shadow-[0_0_8px_var(--color-accent-2)]" />
-            {hero.eyebrow}
+            {content.eyebrow}
           </motion.span>
 
           <motion.h1
             variants={item}
             className="mt-6 text-balance text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl"
           >
-            <span className="text-text-primary">{hero.headline[0]}</span>{" "}
-            <span className="text-gradient">{hero.headline[1]}</span>
+            <span className="text-text-primary">{content.headline[0]}</span>{" "}
+            <span className="text-gradient">{content.headline[1]}</span>
           </motion.h1>
 
           <motion.p
             variants={item}
             className="mt-6 max-w-xl text-pretty text-base leading-relaxed text-text-secondary sm:text-lg"
           >
-            {hero.subheadline}
+            {content.subheadline}
           </motion.p>
 
           <motion.div
@@ -84,33 +93,41 @@ export function HeroSection() {
             className="mt-9 flex w-full flex-col gap-3 sm:w-auto sm:flex-row"
           >
             <Magnetic>
-              <CtaButton href={CONTACT_HREF}>{hero.ctaPrimary}</CtaButton>
+              <CtaButton href={content.ctaPrimary.href}>
+                {content.ctaPrimary.label}
+              </CtaButton>
             </Magnetic>
-            <CtaButton href="#proyectos" variant="secondary" withArrow={false}>
-              {hero.ctaSecondary}
-            </CtaButton>
+            {content.ctaSecondary && (
+              <CtaButton
+                href={content.ctaSecondary.href}
+                variant="secondary"
+                withArrow={false}
+              >
+                {content.ctaSecondary.label}
+              </CtaButton>
+            )}
           </motion.div>
 
-          <motion.p
-            variants={item}
-            className="mt-8 font-mono text-xs uppercase tracking-[0.15em] text-text-muted"
-          >
-            Hecho con{" "}
-            {hero.supporting.map((word, i) => (
-              <span key={word}>
-                <span className="text-text-secondary">{word}</span>
-                {i < hero.supporting.length - 1 && (
-                  <span className="mx-1.5 text-accent">·</span>
-                )}
-              </span>
-            ))}
-          </motion.p>
+          {supporting.length > 0 && (
+            <motion.p
+              variants={item}
+              className="mt-8 font-mono text-xs uppercase tracking-[0.15em] text-text-muted"
+            >
+              Hecho con{" "}
+              {supporting.map((word, i) => (
+                <span key={word}>
+                  <span className="text-text-secondary">{word}</span>
+                  {i < supporting.length - 1 && (
+                    <span className="mx-1.5 text-accent">·</span>
+                  )}
+                </span>
+              ))}
+            </motion.p>
+          )}
         </motion.div>
 
         {/* Layer 4–6 — cinematic product showcase */}
-        <div className="relative z-10">
-          <HeroShowcase />
-        </div>
+        <div className="relative z-10">{showcase ?? <HeroShowcase />}</div>
       </div>
     </section>
   );

@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { Spotlight } from "@/components/ui/spotlight";
-import type { ProjectStatus } from "@/lib/content";
+import type { ProjectStatus } from "@/content/types";
 
 type ProjectCardProps = {
   name: string;

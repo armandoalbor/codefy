@@ -5,12 +5,17 @@ type ServiceCardProps = {
   icon: LucideIcon;
   title: string;
   description: string;
+  /** When present, the whole card becomes a link (used by spoke routers). */
+  href?: string;
 };
 
+const cardClassName =
+  "group relative flex h-full items-start gap-4 overflow-hidden rounded-[var(--radius-card)] border border-surface-border bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-surface-border-strong hover:bg-surface-strong hover:shadow-[0_24px_60px_-24px_rgba(124,58,237,0.5)]";
+
 /** Compact service card used for the non-featured services. */
-export function ServiceCard({ icon: Icon, title, description }: ServiceCardProps) {
-  return (
-    <div className="group relative flex h-full items-start gap-4 overflow-hidden rounded-[var(--radius-card)] border border-surface-border bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-surface-border-strong hover:bg-surface-strong hover:shadow-[0_24px_60px_-24px_rgba(124,58,237,0.5)]">
+export function ServiceCard({ icon: Icon, title, description, href }: ServiceCardProps) {
+  const inner = (
+    <>
       <Spotlight variant="card" />
       <span className="relative grid size-11 shrink-0 place-items-center rounded-xl border border-surface-border bg-background-soft text-accent-2 transition-colors duration-300 group-hover:text-text-primary">
         <Icon className="size-5" />
@@ -23,6 +28,16 @@ export function ServiceCard({ icon: Icon, title, description }: ServiceCardProps
           {description}
         </p>
       </div>
-    </div>
+    </>
   );
+
+  if (href) {
+    return (
+      <a href={href} className={cardClassName}>
+        {inner}
+      </a>
+    );
+  }
+
+  return <div className={cardClassName}>{inner}</div>;
 }

@@ -5,9 +5,11 @@ import { Magnetic } from "@/components/ui/magnetic";
 import { LightBeams } from "@/components/brand/light-beams";
 import { AmbientParticles } from "@/components/brand/ambient-particles";
 import { NeuralFlow, PulseRings } from "@/components/brand/codefy-pulse";
-import { finalCta, CONTACT_HREF } from "@/lib/content";
+import type { FinalCtaContent } from "@/content/types";
 
-export function FinalCtaSection() {
+type FinalCtaSectionProps = { content: FinalCtaContent };
+
+export function FinalCtaSection({ content }: FinalCtaSectionProps) {
   return (
     <section
       id="contacto"
@@ -42,15 +44,15 @@ export function FinalCtaSection() {
 
           <div className="relative mx-auto max-w-2xl">
             <h2 className="text-balance text-3xl font-semibold leading-[1.12] tracking-tight text-text-primary sm:text-4xl md:text-[2.75rem]">
-              {finalCta.title}
+              {content.title}
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-pretty text-base leading-relaxed text-text-secondary sm:text-lg">
-              {finalCta.description}
+              {content.description}
             </p>
             <div className="mt-9 flex justify-center">
               <Magnetic>
-                <CtaButton href={CONTACT_HREF} className="px-8 py-3.5 text-base">
-                  {finalCta.cta}
+                <CtaButton href={content.cta.href} className="px-8 py-3.5 text-base">
+                  {content.cta.label}
                 </CtaButton>
               </Magnetic>
             </div>
