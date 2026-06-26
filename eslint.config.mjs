@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Generated Lighthouse audit output (already gitignored) — never lint it.
+    ".unlighthouse/**",
   ]),
 ]);
 
