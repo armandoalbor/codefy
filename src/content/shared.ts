@@ -3,9 +3,8 @@
  * WhatsApp contact builder. Icon-free by design so it can be consumed by both
  * server and client components (e.g. the route-aware Header).
  *
- * The real-route nav, route→CTA map, and footer chrome defined here are wired
- * into the Header/Footer during the chrome migration; until then the legacy
- * anchor chrome lives in the `src/lib/content` transition shim.
+ * The real-route nav, route→CTA map, and footer chrome defined here are the
+ * single source of truth wired directly into the Header and Footer.
  */
 import type { CtaSpec } from "./types";
 
