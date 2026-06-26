@@ -3,16 +3,17 @@ import { FeatureCard } from "./feature-card";
 import { Reveal } from "@/components/ui/reveal";
 import type { FeatureGridContent } from "@/content/types";
 
-type TelecomCapabilitiesProps = { content: FeatureGridContent };
+type SpokeCapabilitiesProps = { content: FeatureGridContent };
 
 /**
- * Telecom capabilities grid. A bento layout where the lead capability spans two
- * columns so an odd count (5) fills two rows cleanly with no orphan card.
+ * Shared capabilities grid for every service spoke. A bento layout where the
+ * lead capability spans two columns so an odd count (5) fills two rows cleanly
+ * with no orphan card.
  *
  * Server component: it renders the Lucide icons itself (via FeatureCard), so the
  * icon-bearing content never crosses the server→client boundary.
  */
-export function TelecomCapabilities({ content }: TelecomCapabilitiesProps) {
+export function SpokeCapabilities({ content }: SpokeCapabilitiesProps) {
   return (
     <SectionContainer
       eyebrow={content.eyebrow}

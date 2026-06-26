@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { HeroSection } from "@/components/landing/hero-section";
-import { TelecomCapabilities } from "@/components/landing/telecom-capabilities";
+import { SpokeCapabilities } from "@/components/landing/spoke-capabilities";
 import { TelecomProof } from "@/components/landing/telecom-proof";
 import { FinalCtaSection } from "@/components/landing/final-cta-section";
 import { telecomContent } from "@/content/telecomunicaciones";
@@ -24,8 +24,8 @@ export default function TelecomunicacionesPage() {
   return (
     <main>
       <HeroSection content={content.hero} />
-      <TelecomCapabilities content={content.capabilities} />
-      <TelecomProof content={content.proof} />
+      <SpokeCapabilities content={content.capabilities} />
+      {content.proof ? <TelecomProof content={content.proof} /> : null}
       <FinalCtaSection content={content.finalCta} />
     </main>
   );

@@ -152,7 +152,8 @@ export type SpokePageContent = {
   hero: HeroContent;
   capabilities: FeatureGridContent;
   offerings?: ServicesContent;
-  proof: SpokeProofContent;
+  /** Optional single-product proof block. Omit on spokes with no live product to show yet. */
+  proof?: SpokeProofContent;
   process?: ProcessContent;
   finalCta: FinalCtaContent;
 };
