@@ -4,18 +4,31 @@ import { CtaButton } from "./cta-button";
 import { LightBeams } from "@/components/brand/light-beams";
 import { NeuralFlow } from "@/components/brand/codefy-pulse";
 import { buildWhatsApp, whatsappMessages } from "@/content/shared";
+import type { CtaSpec } from "@/content/types";
 
 type ComingSoonProps = {
   eyebrow: string;
   title: string;
   description: string;
+  /** Primary CTA; defaults to the general-inquiry WhatsApp link. */
+  cta?: CtaSpec;
+};
+
+const DEFAULT_CTA: CtaSpec = {
+  label: "Cuéntanos tu proyecto",
+  href: buildWhatsApp(whatsappMessages.general),
 };
 
 /**
- * Shared "Próximamente" screen for deferred spoke routes. Rendered as a Server
- * Component — the route exists (no 404) while the offering is still cooking.
+ * Shared interim screen for routes that exist but aren't fully built yet.
+ * Rendered as a Server Component so the route resolves (no 404).
  */
-export function ComingSoon({ eyebrow, title, description }: ComingSoonProps) {
+export function ComingSoon({
+  eyebrow,
+  title,
+  description,
+  cta = DEFAULT_CTA,
+}: ComingSoonProps) {
   return (
     <main className="relative grid min-h-screen place-items-center overflow-hidden px-5 py-32 sm:px-6">
       <div className="grid-bg pointer-events-none absolute inset-0 -z-20" />
@@ -39,9 +52,7 @@ export function ComingSoon({ eyebrow, title, description }: ComingSoonProps) {
         <NeuralFlow className="mt-8 h-8 w-56 opacity-75" />
 
         <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-          <CtaButton href={buildWhatsApp(whatsappMessages.general)}>
-            Cuéntanos tu proyecto
-          </CtaButton>
+          <CtaButton href={cta.href}>{cta.label}</CtaButton>
           <Link
             href="/"
             className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-tight text-text-secondary transition-colors hover:text-text-primary"
