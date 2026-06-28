@@ -12,6 +12,18 @@ export type CtaSpec = { label: string; href: string };
 /** Per-route metadata used to drive Next.js `metadata` exports. */
 export type RouteMeta = { title: string; description: string; canonical: string };
 
+/**
+ * Selects which bespoke hero visual a route renders in the showcase slot.
+ * Unset (or any not-yet-built variant) falls back to the default home showcase.
+ */
+export type HeroVisualVariant =
+  | "home"
+  | "landing"
+  | "telecom"
+  | "software"
+  | "apps"
+  | "seo";
+
 export type HeroContent = {
   eyebrow: string;
   headline: [string, string];
@@ -19,6 +31,8 @@ export type HeroContent = {
   ctaPrimary: CtaSpec;
   ctaSecondary?: CtaSpec;
   supporting?: string[];
+  /** Per-vertical hero visual; defaults to the standard home showcase. */
+  heroVisual?: HeroVisualVariant;
 };
 
 /** An icon-bearing feature/positioning tile. */
