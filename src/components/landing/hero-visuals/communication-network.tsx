@@ -73,7 +73,7 @@ export function CommunicationNetworkVisual() {
         reduce={reduce}
         className="absolute inset-0 z-10"
       >
-        <div className="relative size-full">
+        <div className="relative aspect-square w-full">
           {/* connections + traveling pulses */}
           <svg
             viewBox="0 0 400 400"
