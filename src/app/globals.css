@@ -255,10 +255,15 @@ body {
   0%, 100% { opacity: 0.12; transform: translateY(0); }
   50% { opacity: 0.8; transform: translateY(-6px); }
 }
+@keyframes eq-bar {
+  0%, 100% { transform: scaleY(0.35); }
+  50% { transform: scaleY(1); }
+}
 
 .animate-node-pulse { animation: node-pulse 4s ease-in-out infinite; }
 .animate-beam-glow { animation: beam-glow 7s ease-in-out infinite; }
 .animate-twinkle { animation: twinkle 6s ease-in-out infinite; }
+.animate-eq-bar { animation: eq-bar 0.9s ease-in-out infinite; transform-origin: bottom; }
 
 /* ============================================================
    Keyframes — slow, premium motion (respects reduced-motion)
