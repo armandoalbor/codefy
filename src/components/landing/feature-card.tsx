@@ -5,9 +5,16 @@ type FeatureCardProps = {
   icon: LucideIcon;
   title: string;
   description: string;
+  /** Optional small, discreet supporting line (e.g. a use-case example). */
+  example?: string;
 };
 
-export function FeatureCard({ icon: Icon, title, description }: FeatureCardProps) {
+export function FeatureCard({
+  icon: Icon,
+  title,
+  description,
+  example,
+}: FeatureCardProps) {
   return (
     <div className="group relative h-full overflow-hidden rounded-[var(--radius-card)] border border-surface-border bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-surface-border-strong hover:bg-surface-strong hover:shadow-[0_24px_60px_-24px_rgba(124,58,237,0.5)]">
       {/* cursor-following glow */}
@@ -23,6 +30,11 @@ export function FeatureCard({ icon: Icon, title, description }: FeatureCardProps
       <p className="relative mt-2 text-sm leading-relaxed text-text-secondary">
         {description}
       </p>
+      {example ? (
+        <p className="relative mt-3 text-xs leading-relaxed text-text-muted">
+          {example}
+        </p>
+      ) : null}
     </div>
   );
 }

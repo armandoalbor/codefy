@@ -13,6 +13,12 @@ import {
   Headphones,
   BarChart3,
   Plug,
+  Headset,
+  Banknote,
+  PhoneCall,
+  MessageCircle,
+  LifeBuoy,
+  Network,
 } from "lucide-react";
 import type { SpokePageContent } from "./types";
 import { buildWhatsApp, whatsappMessages } from "./shared";
@@ -70,6 +76,45 @@ export const telecomContent: SpokePageContent = {
         title: "Integraciones a medida",
         description:
           "Conectamos tu telefonía con CRMs, ERPs y las herramientas que ya usas. Nada de islas de información.",
+      },
+    ],
+  },
+
+  useCases: {
+    eyebrow: "Casos de uso",
+    title: "Diseñado para operaciones que dependen de la comunicación.",
+    description: "Desde equipos pequeños hasta centros de atención completos.",
+    items: [
+      {
+        icon: Headset,
+        title: "Call Centers",
+        description: "Gestión de agentes, colas, grabaciones y métricas.",
+      },
+      {
+        icon: Banknote,
+        title: "Cobranza",
+        description: "Seguimiento eficiente de campañas y desempeño operativo.",
+      },
+      {
+        icon: PhoneCall,
+        title: "Ventas telefónicas",
+        description: "Monitoreo de productividad y control de llamadas.",
+      },
+      {
+        icon: MessageCircle,
+        title: "Atención al cliente",
+        description: "Unificación de voz y WhatsApp en una sola plataforma.",
+      },
+      {
+        icon: LifeBuoy,
+        title: "Soporte técnico",
+        description: "Atención estructurada y trazabilidad completa.",
+      },
+      {
+        icon: Network,
+        title: "Operaciones distribuidas",
+        description:
+          "Equipos trabajando desde distintas ubicaciones bajo una sola operación.",
       },
     ],
   },

@@ -13,6 +13,12 @@ import {
   Scale,
   Boxes,
   Plug,
+  Package,
+  Truck,
+  TrendingUp,
+  Settings,
+  Gauge,
+  Cloud,
 } from "lucide-react";
 import type { SpokePageContent } from "./types";
 import { buildWhatsApp, whatsappMessages } from "./shared";
@@ -73,6 +79,45 @@ export const softwareContent: SpokePageContent = {
         title: "Integraciones",
         description:
           "Conectamos las herramientas, APIs y datos que ya usas. Nada de islas de información.",
+      },
+    ],
+  },
+
+  useCases: {
+    eyebrow: "Casos de uso",
+    title: "Cuando el software comercial ya no alcanza.",
+    description:
+      "Construimos sistemas para procesos específicos que no encajan en soluciones genéricas.",
+    items: [
+      {
+        icon: Package,
+        title: "Inventarios",
+        description: "Control centralizado de productos y movimientos.",
+      },
+      {
+        icon: Truck,
+        title: "Logística",
+        description: "Seguimiento de rutas, entregas y operación.",
+      },
+      {
+        icon: TrendingUp,
+        title: "Monitoreo de precios",
+        description: "Comparación automática frente a la competencia.",
+      },
+      {
+        icon: Settings,
+        title: "Operaciones internas",
+        description: "Procesos administrativos adaptados a tu negocio.",
+      },
+      {
+        icon: Gauge,
+        title: "Dashboards ejecutivos",
+        description: "Indicadores en tiempo real para toma de decisiones.",
+      },
+      {
+        icon: Cloud,
+        title: "Plataformas SaaS",
+        description: "Productos digitales listos para comercializarse.",
       },
     ],
   },

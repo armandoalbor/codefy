@@ -13,6 +13,12 @@ import {
   TrendingUp,
   ClipboardCheck,
   LineChart,
+  UtensilsCrossed,
+  Building2,
+  Stethoscope,
+  Scale,
+  ShoppingCart,
+  MapPin,
 } from "lucide-react";
 import type { SpokePageContent } from "./types";
 import { buildWhatsApp, whatsappMessages } from "./shared";
@@ -70,6 +76,45 @@ export const seoContent: SpokePageContent = {
         title: "Analítica",
         description:
           "Medimos tráfico y conversión para que cada decisión tenga datos detrás, no suposiciones.",
+      },
+    ],
+  },
+
+  useCases: {
+    eyebrow: "Casos de uso",
+    title: "Negocios que necesitan ser encontrados.",
+    description:
+      "El SEO tiene mayor impacto cuando existe una intención real de búsqueda.",
+    items: [
+      {
+        icon: UtensilsCrossed,
+        title: "Restaurantes",
+        description: "Aparecer cuando alguien busca dónde comer.",
+      },
+      {
+        icon: Building2,
+        title: "Inmobiliarias",
+        description: "Captar tráfico interesado en comprar o rentar.",
+      },
+      {
+        icon: Stethoscope,
+        title: "Clínicas",
+        description: "Posicionarse para búsquedas locales y especializadas.",
+      },
+      {
+        icon: Scale,
+        title: "Despachos",
+        description: "Generar confianza antes del primer contacto.",
+      },
+      {
+        icon: ShoppingCart,
+        title: "Ecommerce",
+        description: "Aumentar tráfico orgánico hacia productos y categorías.",
+      },
+      {
+        icon: MapPin,
+        title: "Negocios locales",
+        description: "Ser visibles para clientes cercanos en el momento adecuado.",
       },
     ],
   },

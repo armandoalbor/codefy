@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { HeroSection } from "@/components/landing/hero-section";
 import { SpokeCapabilities } from "@/components/landing/spoke-capabilities";
+import { UseCasesSection } from "@/components/landing/use-cases-section";
 import { TelecomProof } from "@/components/landing/telecom-proof";
 import { FinalCtaSection } from "@/components/landing/final-cta-section";
 import { telecomContent } from "@/content/telecomunicaciones";
@@ -25,6 +26,7 @@ export default function TelecomunicacionesPage() {
     <main>
       <HeroSection content={content.hero} />
       <SpokeCapabilities content={content.capabilities} />
+      {content.useCases ? <UseCasesSection content={content.useCases} /> : null}
       {content.proof ? <TelecomProof content={content.proof} /> : null}
       <FinalCtaSection content={content.finalCta} />
     </main>

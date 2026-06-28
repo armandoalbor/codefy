@@ -13,6 +13,12 @@ import {
   Server,
   Store,
   RefreshCw,
+  Bike,
+  CalendarCheck,
+  Gift,
+  ShoppingBag,
+  Gamepad2,
+  HardHat,
 } from "lucide-react";
 import type { SpokePageContent } from "./types";
 import { buildWhatsApp, whatsappMessages } from "./shared";
@@ -70,6 +76,45 @@ export const appsContent: SpokePageContent = {
         title: "Mantenimiento",
         description:
           "Actualizaciones, métricas y mejoras continuas para que tu app no se quede atrás.",
+      },
+    ],
+  },
+
+  useCases: {
+    eyebrow: "Casos de uso",
+    title: "Experiencias móviles para conectar con tus usuarios.",
+    description:
+      "Apps diseñadas para generar interacción, fidelización y crecimiento.",
+    items: [
+      {
+        icon: Bike,
+        title: "Delivery",
+        description: "Pedidos, seguimiento y comunicación en tiempo real.",
+      },
+      {
+        icon: CalendarCheck,
+        title: "Reservaciones",
+        description: "Agenda digital para servicios y experiencias.",
+      },
+      {
+        icon: Gift,
+        title: "Programas de lealtad",
+        description: "Recompensas, puntos y fidelización.",
+      },
+      {
+        icon: ShoppingBag,
+        title: "Marketplaces",
+        description: "Conectar compradores y vendedores desde una sola app.",
+      },
+      {
+        icon: Gamepad2,
+        title: "Gamificación",
+        description: "Retos, recompensas y participación continua.",
+      },
+      {
+        icon: HardHat,
+        title: "Operación móvil",
+        description: "Herramientas internas para equipos de campo.",
       },
     ],
   },
