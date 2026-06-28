@@ -37,6 +37,29 @@ export type FeatureGridContent = {
   items: FeatureItem[];
 };
 
+/**
+ * A single use-case tile: a real business scenario the visitor can recognize.
+ * `example` is optional small, discreet supporting text.
+ */
+export type UseCaseItem = {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  example?: string;
+};
+
+/**
+ * "Casos de uso" section content — the bridge between technical capabilities
+ * and the final CTA. Fully content-driven so each vertical owns its scenarios
+ * without touching the component.
+ */
+export type UseCasesContent = {
+  eyebrow: string;
+  title: string;
+  description: string;
+  items: UseCaseItem[];
+};
+
 export type FeaturedService = {
   icon: LucideIcon;
   eyebrow: string;
@@ -154,6 +177,8 @@ export type SpokePageContent = {
   offerings?: ServicesContent;
   /** Optional single-product proof block. Omit on spokes with no live product to show yet. */
   proof?: SpokeProofContent;
+  /** "Casos de uso" — sits between capabilities and the final CTA. */
+  useCases?: UseCasesContent;
   process?: ProcessContent;
   finalCta: FinalCtaContent;
 };
