@@ -14,7 +14,18 @@
  * and very light rotation are CSS (also disabled globally under reduced motion).
  */
 
-import { Home, Search, Heart, User, Bell, Star } from "lucide-react";
+import {
+  Home,
+  Search,
+  Heart,
+  User,
+  Bell,
+  Star,
+  BarChart3,
+  Download,
+  Apple,
+  Play,
+} from "lucide-react";
 import {
   Stage,
   Layer,
@@ -34,6 +45,9 @@ export function MobileShowcaseVisual() {
   const back = useDepth(sx, sy, -10);
   const front = useDepth(sx, sy, 24);
   const badge = useDepth(sx, sy, 54);
+  const activity = useDepth(sx, sy, -44);
+  const notif = useDepth(sx, sy, 48);
+  const store = useDepth(sx, sy, -52);
   const dots = useDepth(sx, sy, 66);
 
   return (
@@ -44,37 +58,70 @@ export function MobileShowcaseVisual() {
         colorB="rgba(59,130,246,0.45)"
       />
 
-      {/* secondary phone — behind, offset and dimmed for depth */}
+      {/* secondary phone — a different screen, stacked behind (desktop only) */}
       <Layer
         depth={back}
         delay={0.35}
         float="animate-float-slower"
         reduce={reduce}
-        className="absolute left-1/2 top-1/2 z-0 w-[44%] max-w-[12rem] -translate-x-[78%] -translate-y-[52%]"
+        className="absolute left-1/2 top-1/2 z-0 hidden w-[11.5rem] -translate-x-[2%] -translate-y-[54%] sm:block"
       >
-        <BackPhone />
+        <StatsPhone />
       </Layer>
 
-      {/* main phone — front and centered */}
+      {/* main phone — front; centered on mobile, left-shifted on desktop */}
       <Layer
         depth={front}
         delay={0.5}
         float="animate-float-slow"
         reduce={reduce}
-        className="absolute left-1/2 top-1/2 z-10 w-[50%] max-w-[14rem] -translate-x-[36%] -translate-y-1/2"
+        className="absolute left-1/2 top-1/2 z-10 w-[12rem] -translate-x-1/2 -translate-y-1/2 sm:-translate-x-[58%]"
       >
         <FrontPhone reduce={reduce} />
       </Layer>
 
-      {/* floating rating badge */}
+      {/* rating badge — top-right (mobile + desktop) */}
       <Layer
         depth={badge}
         delay={0.85}
         float="animate-float-slower"
         reduce={reduce}
-        className="absolute right-0 top-10 z-20 hidden w-32 sm:block"
+        className="absolute right-1 top-6 z-20 w-28 sm:right-5 sm:top-9 sm:w-32"
       >
         <RatingBadge />
+      </Layer>
+
+      {/* notification badge — bottom-left (mobile + desktop) */}
+      <Layer
+        depth={notif}
+        delay={0.95}
+        float="animate-float-slow"
+        reduce={reduce}
+        className="absolute bottom-12 left-1 z-20 w-36 sm:bottom-16 sm:left-5"
+      >
+        <NotificationBadge />
+      </Layer>
+
+      {/* activity toast — top-left (desktop) */}
+      <Layer
+        depth={activity}
+        delay={1.05}
+        float="animate-float-slow"
+        reduce={reduce}
+        className="absolute left-3 top-20 z-20 hidden w-40 sm:block"
+      >
+        <ActivityToast />
+      </Layer>
+
+      {/* store availability — bottom-right (desktop) */}
+      <Layer
+        depth={store}
+        delay={1.15}
+        float="animate-float-slower"
+        reduce={reduce}
+        className="absolute bottom-10 right-3 z-20 hidden w-44 sm:block"
+      >
+        <StoreBadge />
       </Layer>
 
       <Particles depth={dots} color="rgba(168,85,247,0.7)" />
@@ -193,29 +240,94 @@ function FrontPhone({ reduce }: { reduce: boolean | null }) {
   );
 }
 
-function BackPhone() {
+/** Secondary phone — a distinct "Estadísticas" screen, tilted behind the main one. */
+function StatsPhone() {
   return (
-    <div className="rotate-[7deg] opacity-55 blur-[0.5px]">
+    <div className="rotate-[8deg] opacity-80">
       <PhoneFrame>
         <StatusBar />
         <div className="px-3 pb-3 pt-1">
-          <span className="block h-2 w-1/2 rounded-full bg-surface-strong" />
-          <div
-            className="mt-2 h-16 w-full rounded-xl"
-            style={{
-              background: `linear-gradient(135deg, rgba(168,85,247,0.45), rgba(59,130,246,0.3))`,
-            }}
-          />
-          <div className="mt-2 grid grid-cols-2 gap-1.5">
-            <span className="h-10 rounded-lg bg-surface" />
-            <span className="h-10 rounded-lg bg-surface" />
+          <div className="flex items-center justify-between">
+            <p className="text-[0.7rem] font-semibold text-text-primary">
+              Estadísticas
+            </p>
+            <BarChart3 className="size-3 text-[#c4b5fd]" />
           </div>
+
+          {/* ascending area chart */}
+          <div className="mt-2 h-14 w-full">
+            <svg
+              viewBox="0 0 120 56"
+              fill="none"
+              preserveAspectRatio="none"
+              className="size-full"
+              aria-hidden="true"
+            >
+              <defs>
+                <linearGradient id="ms-fill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor={PURPLE} stopOpacity="0.4" />
+                  <stop offset="100%" stopColor={PURPLE} stopOpacity="0" />
+                </linearGradient>
+                <linearGradient id="ms-stroke" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stopColor={PURPLE} />
+                  <stop offset="100%" stopColor={BLUE} />
+                </linearGradient>
+              </defs>
+              <path
+                d="M0 46 C 22 42 32 32 50 28 C 70 24 84 16 120 6 L120 56 L0 56 Z"
+                fill="url(#ms-fill)"
+              />
+              <path
+                d="M0 46 C 22 42 32 32 50 28 C 70 24 84 16 120 6"
+                stroke="url(#ms-stroke)"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+              />
+            </svg>
+          </div>
+
+          {/* stat tiles */}
+          <div className="mt-2 grid grid-cols-2 gap-1.5">
+            <div className="rounded-lg border border-surface-border bg-surface p-1.5">
+              <p className="font-mono text-[0.45rem] uppercase tracking-wide text-text-muted">
+                Usuarios
+              </p>
+              <p className="text-[0.7rem] font-semibold text-text-primary">8.6k</p>
+            </div>
+            <div className="rounded-lg border border-surface-border bg-surface p-1.5">
+              <p className="font-mono text-[0.45rem] uppercase tracking-wide text-text-muted">
+                Sesiones
+              </p>
+              <p className="text-[0.7rem] font-semibold text-text-primary">24k</p>
+            </div>
+          </div>
+
           <div className="mt-2 space-y-1.5">
             <span className="block h-1.5 w-full rounded-full bg-surface-strong" />
             <span className="block h-1.5 w-2/3 rounded-full bg-surface" />
           </div>
         </div>
       </PhoneFrame>
+    </div>
+  );
+}
+
+/** Floating "new download" toast — adds life and fills the lower-left space. */
+function ActivityToast() {
+  return (
+    <div className="glass flex items-center gap-2 rounded-xl p-2.5 shadow-[var(--shadow-soft)]">
+      <span
+        className="grid size-7 shrink-0 place-items-center rounded-lg"
+        style={{ background: `linear-gradient(135deg, ${PURPLE}, ${BLUE})` }}
+      >
+        <Download className="size-3.5 text-white" />
+      </span>
+      <div className="min-w-0">
+        <p className="truncate text-[0.6rem] font-semibold text-text-primary">
+          Nueva descarga
+        </p>
+        <p className="text-[0.5rem] text-text-muted">App Store · ahora</p>
+      </div>
     </div>
   );
 }
@@ -234,10 +346,56 @@ function RatingBadge() {
       </div>
       <p className="mt-1.5 text-sm font-semibold text-text-primary">
         <Counter to={4.9} decimals={1} />
-        <span className="ml-1 text-[0.55rem] font-normal text-text-muted">
+        <span className="ml-1 text-[0.55rem] font-normal text-text-secondary">
           en tiendas
         </span>
       </p>
+    </div>
+  );
+}
+
+/** Floating notification badge — adds life and "engagement" signal. */
+function NotificationBadge() {
+  return (
+    <div className="glass flex items-center gap-2 rounded-xl p-2.5 shadow-[var(--shadow-soft)]">
+      <span
+        className="relative grid size-7 shrink-0 place-items-center rounded-lg"
+        style={{ background: `linear-gradient(135deg, ${PURPLE}, ${BLUE})` }}
+      >
+        <Bell className="size-3.5 text-white" />
+        <span className="absolute -right-0.5 -top-0.5 size-2 rounded-full bg-[#f43f5e] ring-2 ring-[var(--color-background-soft)]" />
+      </span>
+      <div className="min-w-0">
+        <p className="truncate text-[0.6rem] font-semibold text-text-primary">
+          Nueva notificación
+        </p>
+        <p className="text-[0.5rem] text-text-muted">Tienes 3 mensajes</p>
+      </div>
+    </div>
+  );
+}
+
+/** Store availability — monochrome, premium (no colorful brand logos). */
+function StoreBadge() {
+  return (
+    <div className="glass rounded-xl p-2.5 shadow-[var(--shadow-soft)]">
+      <p className="text-[0.5rem] uppercase tracking-wide text-text-muted">
+        Disponible en
+      </p>
+      <div className="mt-1.5 flex items-center gap-1.5">
+        <span className="inline-flex items-center gap-1 rounded-md border border-surface-border bg-surface px-1.5 py-1">
+          <Apple className="size-3 text-text-primary" />
+          <span className="text-[0.55rem] font-medium text-text-secondary">
+            App Store
+          </span>
+        </span>
+        <span className="inline-flex items-center gap-1 rounded-md border border-surface-border bg-surface px-1.5 py-1">
+          <Play className="size-3 text-text-primary" />
+          <span className="text-[0.55rem] font-medium text-text-secondary">
+            Google Play
+          </span>
+        </span>
+      </div>
     </div>
   );
 }
