@@ -13,8 +13,9 @@
  * diverge the easing/spring values or the visuals will stop feeling related.
  */
 
-import type { CSSProperties, ReactNode } from "react";
+import { useEffect, useState, type CSSProperties, type ReactNode } from "react";
 import {
+  animate,
   motion,
   useMotionValue,
   useSpring,
@@ -25,6 +26,46 @@ import {
 
 /** The single easing curve shared across the entire hero visual system. */
 export const EASE = [0.21, 0.47, 0.32, 0.98] as const;
+
+/** Animated count-up shared by hero visuals; jumps to the final value under reduced motion. */
+export function Counter({
+  to,
+  prefix = "",
+  suffix = "",
+  decimals = 0,
+}: {
+  to: number;
+  prefix?: string;
+  suffix?: string;
+  decimals?: number;
+}) {
+  const reduce = useReducedMotion();
+  const [value, setValue] = useState(0);
+
+  useEffect(() => {
+    // animate() drives state via async onUpdate (rAF), so no synchronous
+    // setState in the effect body. duration 0 = instant jump for reduced motion.
+    const controls = animate(0, to, {
+      duration: reduce ? 0 : 1.6,
+      ease: EASE,
+      onUpdate: (v) => setValue(v),
+    });
+    return () => controls.stop();
+  }, [to, reduce]);
+
+  const formatted =
+    decimals > 0
+      ? value.toFixed(decimals)
+      : Math.round(value).toLocaleString("en-US");
+
+  return (
+    <>
+      {prefix}
+      {formatted}
+      {suffix}
+    </>
+  );
+}
 
 /** A pair of parallax-driven motion values for one depth plane. */
 export type Depth = { x: MotionValue<number>; y: MotionValue<number> };

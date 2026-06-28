@@ -14,61 +14,19 @@
  * home showcase. Counters and chart motion respect reduced motion.
  */
 
-import { useEffect, useState } from "react";
-import { animate, useReducedMotion } from "motion/react";
 import { TrendingUp, Package, Users, Activity } from "lucide-react";
 import {
   Stage,
   Layer,
   AmbientGlow,
   Particles,
-  EASE,
+  Counter,
   useParallax,
   useDepth,
 } from "./shared";
 
 const INDIGO = "#6366f1";
 const EMERALD = "#10b981";
-
-/** Animated count-up; renders the final value immediately under reduced motion. */
-function Counter({
-  to,
-  prefix = "",
-  suffix = "",
-  decimals = 0,
-}: {
-  to: number;
-  prefix?: string;
-  suffix?: string;
-  decimals?: number;
-}) {
-  const reduce = useReducedMotion();
-  const [value, setValue] = useState(0);
-
-  useEffect(() => {
-    // animate() drives state via async onUpdate (rAF), so no synchronous
-    // setState in the effect body. duration 0 = instant jump for reduced motion.
-    const controls = animate(0, to, {
-      duration: reduce ? 0 : 1.6,
-      ease: EASE,
-      onUpdate: (v) => setValue(v),
-    });
-    return () => controls.stop();
-  }, [to, reduce]);
-
-  const formatted =
-    decimals > 0
-      ? value.toFixed(decimals)
-      : Math.round(value).toLocaleString("en-US");
-
-  return (
-    <>
-      {prefix}
-      {formatted}
-      {suffix}
-    </>
-  );
-}
 
 const INVENTORY = [
   { sku: "SKU-2041", name: "Core Plan", status: "En stock", ok: true },
