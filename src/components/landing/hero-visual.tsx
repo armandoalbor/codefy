@@ -11,6 +11,7 @@
 import { HeroShowcase } from "./hero-showcase";
 import { CommunicationNetworkVisual } from "./hero-visuals/communication-network";
 import { LivingDashboardVisual } from "./hero-visuals/living-dashboard";
+import { BrowserMockupVisual } from "./hero-visuals/browser-mockup";
 import type { HeroVisualVariant } from "@/content/types";
 
 export function HeroVisual({ variant }: { variant: HeroVisualVariant }) {
@@ -19,9 +20,10 @@ export function HeroVisual({ variant }: { variant: HeroVisualVariant }) {
       return <CommunicationNetworkVisual />;
     case "software":
       return <LivingDashboardVisual />;
-    // Phase 2 verticals fall back to the home showcase for now.
-    case "home":
     case "landing":
+      return <BrowserMockupVisual />;
+    // Remaining Phase 2 verticals fall back to the home showcase for now.
+    case "home":
     case "apps":
     case "seo":
     default:
