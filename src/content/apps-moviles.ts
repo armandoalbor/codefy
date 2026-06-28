@@ -39,6 +39,7 @@ export const appsContent: SpokePageContent = {
     subheadline:
       "Apps para iOS y Android, listas para App Store y Google Play. Rápidas, pulidas y pensadas para escalar.",
     ctaPrimary: { label: "Cuéntanos tu idea", href: appsContactHref },
+    heroVisual: "apps",
   },
 
   capabilities: {

@@ -56,6 +56,7 @@ export const landingPagesContent: LandingPagesContent = {
     ctaPrimary: { label: "Quiero mi landing", href: contactHrefLanding },
     ctaSecondary: { label: "Ver proyectos", href: "#proyectos" },
     supporting: ["estrategia", "diseño", "código", "IA"],
+    heroVisual: "landing",
   },
 
   positioning: {

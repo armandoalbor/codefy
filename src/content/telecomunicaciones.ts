@@ -39,6 +39,7 @@ export const telecomContent: SpokePageContent = {
     subheadline:
       "Construimos plataformas omnicanal sobre Asterisk: voz, WhatsApp, control de agentes y métricas en tiempo real. La potencia de un PBX empresarial, con una interfaz que da gusto usar.",
     ctaPrimary: { label: "Cuéntanos tu operación", href: telecomContactHref },
+    heroVisual: "telecom",
   },
 
   capabilities: {

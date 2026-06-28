@@ -39,6 +39,7 @@ export const seoContent: SpokePageContent = {
     subheadline:
       "Posicionamiento orgánico, optimización de rendimiento y mejora de sitios existentes. Tu presencia digital trabajando para tu negocio.",
     ctaPrimary: { label: "Auditemos tu sitio", href: seoContactHref },
+    heroVisual: "seo",
   },
 
   capabilities: {

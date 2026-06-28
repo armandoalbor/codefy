@@ -3,7 +3,7 @@
 import type { ReactNode } from "react";
 import { motion } from "motion/react";
 import { CtaButton } from "./cta-button";
-import { HeroShowcase } from "./hero-showcase";
+import { HeroVisual } from "./hero-visual";
 import { Spotlight } from "@/components/ui/spotlight";
 import { Magnetic } from "@/components/ui/magnetic";
 import { LightBeams } from "@/components/brand/light-beams";
@@ -127,7 +127,9 @@ export function HeroSection({ content, showcase }: HeroSectionProps) {
         </motion.div>
 
         {/* Layer 4–6 — cinematic product showcase */}
-        <div className="relative z-10">{showcase ?? <HeroShowcase />}</div>
+        <div className="relative z-10">
+          {showcase ?? <HeroVisual variant={content.heroVisual ?? "home"} />}
+        </div>
       </div>
     </section>
   );
