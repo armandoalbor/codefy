@@ -42,6 +42,7 @@ export const softwareContent: SpokePageContent = {
     subheadline:
       "Dashboards, plataformas internas, automatizaciones y SaaS. Diseñamos sistemas que se adaptan a tu negocio — no al revés.",
     ctaPrimary: { label: "Cuéntanos tu proyecto", href: softwareContactHref },
+    heroVisual: "software",
   },
 
   capabilities: {
