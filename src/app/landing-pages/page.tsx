@@ -5,6 +5,7 @@ import { ServicesSection } from "@/components/landing/services-section";
 import { PortfolioSection } from "@/components/landing/portfolio-section";
 import { CodefySignatureSection } from "@/components/landing/codefy-signature-section";
 import { ProcessSection } from "@/components/landing/process-section";
+import { UseCasesSection } from "@/components/landing/use-cases-section";
 import { FinalCtaSection } from "@/components/landing/final-cta-section";
 import { landingPagesContent } from "@/content/landing-pages";
 
@@ -26,6 +27,7 @@ export default function LandingPagesPage() {
       <PortfolioSection content={content.portfolio} />
       <CodefySignatureSection content={content.signature} />
       <ProcessSection content={content.process} />
+      <UseCasesSection content={content.useCases} />
       <FinalCtaSection content={content.finalCta} />
     </main>
   );

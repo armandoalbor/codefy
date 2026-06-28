@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { HeroSection } from "@/components/landing/hero-section";
 import { SpokeCapabilities } from "@/components/landing/spoke-capabilities";
+import { UseCasesSection } from "@/components/landing/use-cases-section";
 import { FinalCtaSection } from "@/components/landing/final-cta-section";
 import { softwareContent } from "@/content/software-a-la-medida";
 
@@ -24,6 +25,7 @@ export default function SoftwareALaMedidaPage() {
     <main>
       <HeroSection content={content.hero} />
       <SpokeCapabilities content={content.capabilities} />
+      {content.useCases ? <UseCasesSection content={content.useCases} /> : null}
       <FinalCtaSection content={content.finalCta} />
     </main>
   );

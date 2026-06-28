@@ -18,6 +18,11 @@ import {
   PenTool,
   Hammer,
   Send,
+  Camera,
+  UtensilsCrossed,
+  Building2,
+  Briefcase,
+  Stethoscope,
 } from "lucide-react";
 import type {
   FeatureGridContent,
@@ -27,6 +32,7 @@ import type {
   ProcessContent,
   ServicesContent,
   SignatureContent,
+  UseCasesContent,
 } from "./types";
 import { contactHrefLanding } from "./shared";
 
@@ -37,6 +43,7 @@ type LandingPagesContent = {
   portfolio: PortfolioContent;
   signature: SignatureContent;
   process: ProcessContent;
+  useCases: UseCasesContent;
   finalCta: FinalCtaContent;
 };
 
@@ -216,6 +223,48 @@ export const landingPagesContent: LandingPagesContent = {
         title: "Lanzamos",
         description:
           "Publicamos, conectamos formularios, WhatsApp, analytics y dejamos todo listo.",
+      },
+    ],
+  },
+
+  useCases: {
+    eyebrow: "Casos de uso",
+    title: "Ideal para negocios que quieren crecer rápido.",
+    description:
+      "Una landing puede ser el primer paso para validar una idea, generar confianza o comenzar a vender en línea.",
+    items: [
+      {
+        icon: Camera,
+        title: "Fotografía y eventos",
+        description:
+          "Landing profesional para captar reservas y mostrar portafolio.",
+      },
+      {
+        icon: UtensilsCrossed,
+        title: "Restaurantes y dark kitchens",
+        description:
+          "Más pedidos, mejor presencia digital y campañas de temporada.",
+      },
+      {
+        icon: Building2,
+        title: "Inmobiliarias",
+        description: "Captación de prospectos mediante formularios y campañas.",
+      },
+      {
+        icon: Briefcase,
+        title: "Consultorías y despachos",
+        description: "Transmitir confianza y generar oportunidades de negocio.",
+      },
+      {
+        icon: Stethoscope,
+        title: "Clínicas y servicios profesionales",
+        description: "Información clara, contacto rápido y generación de citas.",
+      },
+      {
+        icon: Rocket,
+        title: "Emprendimientos y startups",
+        description:
+          "Validar una idea antes de invertir en una plataforma completa.",
       },
     ],
   },
