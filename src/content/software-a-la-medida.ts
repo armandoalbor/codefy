@@ -14,7 +14,7 @@ import {
   Boxes,
   Plug,
   Package,
-  Truck,
+  ShoppingCart,
   TrendingUp,
   Settings,
   Gauge,
@@ -27,64 +27,67 @@ const softwareContactHref = buildWhatsApp(whatsappMessages.software);
 
 export const softwareContent: SpokePageContent = {
   meta: {
-    title: "Software a la Medida: Dashboards, Plataformas y SaaS",
+    title: "Software a la Medida, Sistemas Internos y Plataformas SaaS",
     description:
-      "Dashboards, plataformas internas, automatizaciones y SaaS. Diseñamos sistemas que se adaptan a tu negocio — no al revés.",
+      "Construimos sistemas, dashboards, automatizaciones y plataformas empresariales diseñadas alrededor de tu operación. Tecnología que resuelve problemas reales.",
     canonical: "/software-a-la-medida",
   },
 
   hero: {
-    eyebrow: "Software a la medida",
+    eyebrow: "Sistemas empresariales",
     headline: [
-      "El software que tu operación necesita,",
-      "construido a tu medida.",
+      "Cuando Excel ya no es suficiente,",
+      "es momento de construir tu sistema.",
     ],
     subheadline:
-      "Dashboards, plataformas internas, automatizaciones y SaaS. Diseñamos sistemas que se adaptan a tu negocio — no al revés.",
-    ctaPrimary: { label: "Cuéntanos tu proyecto", href: softwareContactHref },
+      "Diseñamos y desarrollamos plataformas, dashboards, automatizaciones y software empresarial construido alrededor de tu operación. Tu negocio se adapta a tus procesos, no a las limitaciones de una herramienta genérica.",
+    ctaPrimary: {
+      label: "Hablemos de tu proyecto",
+      href: softwareContactHref,
+    },
     heroVisual: "software",
   },
 
   capabilities: {
     eyebrow: "Qué construimos",
-    title: "Sistemas que se adaptan a tu negocio.",
+    title: "Tecnología diseñada alrededor de tu operación.",
     description:
-      "Desde el tablero que mira tu equipo cada mañana hasta la plataforma que sostiene toda tu operación. Cada pieza, diseñada alrededor de tu proceso.",
+      "Cada negocio tiene procesos distintos. Por eso construimos sistemas que se adaptan a la forma en que trabajas, en lugar de obligarte a cambiar para encajar en una plataforma genérica.",
     items: [
       {
         icon: LayoutDashboard,
-        title: "Dashboards y paneles",
+        title: "Dashboards y monitoreo",
         description:
-          "Métricas, monitoreo y reporting en tiempo real para decidir con datos, no con corazonadas.",
+          "Indicadores, métricas y visualización de datos en tiempo real para tomar mejores decisiones todos los días.",
       },
       {
         icon: SlidersHorizontal,
-        title: "Plataformas internas",
+        title: "Sistemas internos",
         description:
-          "Herramientas de administración moldeadas a tu proceso, no a una plantilla genérica.",
+          "Herramientas administrativas, operaciones, inventarios, seguimiento y control diseñados específicamente para tu negocio.",
       },
       {
         icon: Scale,
-        title: "Comparadores de precios",
+        title: "Monitoreo de competencia",
         description:
-          "Scrapers en tiempo real que vigilan a tu competencia: súper, viajes o el mercado que sea.",
+          "Scrapers y plataformas de inteligencia comercial para vigilar precios, productos y movimientos del mercado en tiempo real.",
       },
       {
         icon: Boxes,
-        title: "SaaS a medida",
+        title: "Plataformas SaaS",
         description:
-          "Productos multi-tenant escalables, listos para crecer contigo desde el primer cliente.",
+          "Productos multi-tenant listos para crecer, monetizar y escalar desde los primeros usuarios hasta miles de clientes.",
       },
       {
         icon: Plug,
-        title: "Integraciones",
+        title: "Integraciones y automatización",
         description:
-          "Conectamos las herramientas, APIs y datos que ya usas. Nada de islas de información.",
+          "Conectamos APIs, sistemas existentes y procesos operativos para eliminar tareas repetitivas y reducir errores.",
       },
     ],
   },
 
-  useCases: {
+   useCases: {
     eyebrow: "Casos de uso",
     title: "Cuando el software comercial ya no alcanza.",
     description:
@@ -96,9 +99,9 @@ export const softwareContent: SpokePageContent = {
         description: "Control centralizado de productos y movimientos.",
       },
       {
-        icon: Truck,
-        title: "Logística",
-        description: "Seguimiento de rutas, entregas y operación.",
+        icon: ShoppingCart,
+        title: "E-commerce",
+        description: "Marketplaces, pedidos, pagos y sistemas internos conectados para vender con mayor control.",
       },
       {
         icon: TrendingUp,
@@ -124,9 +127,12 @@ export const softwareContent: SpokePageContent = {
   },
 
   finalCta: {
-    title: "¿Tienes un proceso que el software debería resolver?",
+    title: "¿Existe un proceso que podría funcionar mejor?",
     description:
-      "Cuéntanos cómo opera tu negocio hoy y diseñamos el sistema que lo lleva al siguiente nivel. Sin compromiso, directo al grano.",
-    cta: { label: "Cuéntanos tu proyecto", href: softwareContactHref },
+      "Cuéntanos cómo opera tu negocio hoy. Analizaremos el proceso y diseñaremos la tecnología necesaria para hacerlo más eficiente, escalable y fácil de controlar.",
+    cta: {
+      label: "Hablemos de tu proyecto",
+      href: softwareContactHref,
+    },
   },
 };

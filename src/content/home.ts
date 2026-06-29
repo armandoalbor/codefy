@@ -42,42 +42,42 @@ const generalContactHref = buildWhatsApp(whatsappMessages.general);
 
 export const homeContent: HomeContent = {
   hero: {
-    eyebrow: "Estudio de producto digital",
-    headline: ["Construimos software serio.", "Y lo hacemos ver excepcional."],
+    eyebrow: "Ingeniería de software • Telecomunicaciones",
+    headline: ["Construimos tecnología", "que impulsa negocios."],
     subheadline:
-      "Desde plataformas de telecomunicaciones hasta tu próxima web: ingeniería sólida y diseño premium para negocios que quieren crecer de verdad.",
-    ctaPrimary: { label: "Cuéntanos tu proyecto", href: generalContactHref },
-    ctaSecondary: { label: "Ver lo que hacemos", href: "#servicios" },
+      "Desde plataformas empresariales y call centers hasta apps móviles y experiencias digitales. Diseñamos, desarrollamos e implementamos software que resuelve problemas reales de operación, ventas y crecimiento.",
+    ctaPrimary: { label: "Hablemos de tu idea", href: generalContactHref },
+    ctaSecondary: { label: "Ver nuestros productos", href: "#portfolio" },
   },
 
   positioning: {
     title: "No somos una agencia más. Somos tu equipo de producto.",
     description:
-      "Diseño, ingeniería y visión de negocio trabajando como un solo equipo. Así construimos productos que se ven y funcionan al nivel de tu ambición.",
+      "Diseño, ingeniería y visión de negocio trabajando como un solo equipo. Construimos tecnología que genera resultados reales: productos que se ven bien, funcionan mejor y están preparados para crecer.",
     items: [
       {
         icon: Code2,
         title: "Ingeniería real",
         description:
-          "Código sólido, arquitectura escalable y buenas prácticas. Construimos para que crezca, no para salir del paso.",
+          "Arquitectura sólida, código mantenible y decisiones técnicas pensadas para el largo plazo. Construimos para crecer, no para salir del paso.",
       },
       {
         icon: Sparkles,
         title: "Diseño premium",
         description:
-          "Interfaces limpias, modernas y cuidadas al detalle. Tu producto se ve tan serio como la ingeniería que lo sostiene.",
+          "Interfaces modernas, limpias y cuidadas al detalle. Tu producto transmite la misma calidad que la tecnología que lo sostiene.",
       },
       {
         icon: Target,
         title: "Visión de producto",
         description:
-          "Pensamos en negocio, conversión y experiencia. No entregamos pantallas: entregamos resultados.",
+          "Pensamos en tu negocio, usuarios y conversión. No entregamos pantallas: construimos soluciones que generan valor.",
       },
       {
         icon: Rocket,
         title: "Entrega ágil",
         description:
-          "Iteramos rápido y lanzamos sin sacrificar calidad. Menos espera, más producto en manos de tus usuarios.",
+          "Iteramos rápido, validamos temprano y lanzamos con calidad. Menos tiempo esperando, más tiempo creciendo.",
       },
     ],
   },
@@ -85,20 +85,20 @@ export const homeContent: HomeContent = {
   services: {
     title: "Lo que construimos",
     description:
-      "Desde telecomunicaciones empresariales hasta tu próxima web. Elige por dónde empezar y nosotros nos encargamos del resto.",
+      "Desde infraestructura de comunicación hasta plataformas empresariales. Elegimos la tecnología adecuada para resolver el problema correcto.",
     featured: {
       icon: Phone,
       eyebrow: "Vertical destacada",
       title: "Telecomunicaciones",
       description:
-        "Plataformas de telefonía, call centers y comunicación omnicanal. Nuestra especialidad técnica más profunda, ya en producción.",
+        "Telefonía empresarial, call centers, voz, WhatsApp e infraestructura omnicanal. Nuestra especialidad técnica más profunda y el origen de cc365.",
       features: [
         "PBX y conmutadores Asterisk",
-        "Call centers y atención",
+        "Call centers omnicanal",
         "Voz, IVR y grabación",
-        "WhatsApp y omnicanal",
+        "WhatsApp empresarial",
         "Integraciones y CRMs",
-        "Tableros y métricas",
+        "Métricas y monitoreo",
       ],
       cta: { label: "Ver telecomunicaciones", href: "/telecomunicaciones" },
     },
@@ -107,44 +107,44 @@ export const homeContent: HomeContent = {
         icon: LayoutDashboard,
         title: "Software a la medida",
         description:
-          "Aplicaciones web, dashboards y plataformas SaaS con arquitectura escalable.",
+          "Sistemas internos, dashboards, automatizaciones y plataformas SaaS construidas alrededor de tu operación.",
         href: "/software-a-la-medida",
       },
       {
         icon: Rocket,
         title: "Landing Pages",
         description:
-          "Landings premium, rápidas y orientadas a conversión para validar y vender.",
+          "Landing pages premium para validar ideas, generar confianza y convertir visitantes en clientes.",
         href: "/landing-pages",
       },
       {
         icon: Smartphone,
         title: "Apps móviles",
         description:
-          "Experiencias móviles con diseño premium e ingeniería sólida.",
+          "Apps para iOS y Android diseñadas para crecer contigo desde la primera versión.",
         href: "/apps-moviles",
       },
       {
         icon: Search,
         title: "SEO y optimización",
         description:
-          "Performance y posicionamiento técnico para crecer en buscadores.",
+          "Velocidad, posicionamiento y optimización técnica para que te encuentren antes que a tu competencia.",
         href: "/seo-optimizacion",
       },
     ],
   },
 
   portfolio: {
-    title: "Productos reales, funcionando hoy.",
+    title: "No son conceptos. Son productos reales.",
     description:
-      "No mostramos mockups: mostramos producto en producción. Esto es parte de lo que hemos construido.",
+      "Mostramos tecnología funcionando en producción. Esto es parte de lo que hemos diseñado, construido y puesto en marcha.",
     featured: {
       name: "CC365",
       category: "Plataforma de telecomunicaciones",
       description:
-        "Plataforma omnicanal para atención, voz y WhatsApp con enfoque SaaS.",
+        "Plataforma omnicanal para atención, voz y WhatsApp diseñada para operaciones que necesitan escalar.",
       story:
-        "Una plataforma completa de telecomunicaciones: voz, WhatsApp y atención omnicanal en un solo lugar. Es nuestra prueba viva de que construimos software serio, en producción y a escala.",
+        "Una plataforma completa de telecomunicaciones empresariales. Voz, WhatsApp, agentes, métricas y operación en tiempo real dentro de un mismo producto. Construida por Codefy y funcionando en producción.",
       status: "live",
       accent: "#818cf8",
       accent2: "#06b6d4",
@@ -153,9 +153,9 @@ export const homeContent: HomeContent = {
     projects: [
       {
         name: "Anny Studio",
-        category: "Landing premium",
+        category: "Experiencia digital premium",
         description:
-          "Landing para estudio fotográfico con estética pastel y experiencia cinematográfica.",
+          "Experiencia digital premium para una marca de fotografía especializada en bodas y momentos memorables.",
         status: "live",
         accent: "#f0abfc",
         accent2: "#22d3ee",
@@ -164,7 +164,7 @@ export const homeContent: HomeContent = {
         name: "ChilaKillers",
         category: "Landing / Food brand",
         description:
-          "Concepto visual para dark kitchen especializada en chilaquiles, con enfoque de conversión local.",
+          "Landing orientada a conversión para una dark kitchen enfocada en crecimiento local y pedidos digitales.",
         status: "live",
         accent: "#fb923c",
         accent2: "#facc15",
@@ -173,7 +173,7 @@ export const homeContent: HomeContent = {
         name: "Próximamente",
         category: "Nuevos verticales",
         description:
-          "Más producto en camino: software empresarial, automatización y nuevas plataformas.",
+          "Automatización, inteligencia artificial, software empresarial y nuevos productos en desarrollo.",
         status: "soon",
         accent: "#94a3b8",
         accent2: "#475569",
@@ -189,36 +189,36 @@ export const homeContent: HomeContent = {
         icon: Search,
         title: "Descubrimos",
         description:
-          "Entendemos tu negocio, tus objetivos y a quién le hablas.",
+          "Entendemos tu negocio, identificamos cuellos de botella y detectamos oportunidades de mejora.",
       },
       {
         number: "02",
         icon: PenTool,
         title: "Diseñamos",
         description:
-          "Definimos la experiencia y una propuesta visual premium para tu producto.",
+          "Diseñamos la solución, definimos arquitectura y trazamos el camino hacia producción.",
       },
       {
         number: "03",
         icon: Hammer,
         title: "Construimos",
         description:
-          "Desarrollamos con ingeniería sólida, escalable y lista para crecer.",
+          "Construimos con ingeniería sólida, procesos claros y tecnología preparada para escalar.",
       },
       {
         number: "04",
         icon: Send,
         title: "Lanzamos",
         description:
-          "Publicamos, medimos y te acompañamos para que siga mejorando.",
+          "Implementamos, medimos y evolucionamos el producto junto contigo.",
       },
     ],
   },
 
   finalCta: {
-    title: "¿Tienes un proyecto en mente? Construyámoslo bien.",
+    title: "¿Listo para construir tecnología que haga crecer tu negocio?",
     description:
-      "Cuéntanos qué quieres construir. Te respondemos rápido, con una propuesta clara y sin vueltas.",
+      "Cuéntanos qué desafío quieres resolver. Te ayudaremos a convertir una idea, proceso o necesidad operativa en un producto real.",
     cta: { label: "Cuéntanos tu proyecto", href: generalContactHref },
   },
 };

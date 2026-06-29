@@ -29,54 +29,60 @@ export const appsContent: SpokePageContent = {
   meta: {
     title: "Apps Móviles para iOS y Android",
     description:
-      "Apps para iOS y Android, listas para App Store y Google Play. Rápidas, pulidas y pensadas para escalar.",
+      "Diseñamos y desarrollamos apps móviles para iOS y Android. Productos digitales listos para crecer, escalar y generar valor desde el primer lanzamiento.",
     canonical: "/apps-moviles",
   },
 
   hero: {
-    eyebrow: "Apps móviles",
-    headline: ["Tu producto", "en el bolsillo de tus clientes."],
+    eyebrow: "Apps móviles • iOS • Android",
+    headline: [
+      "Tu producto,",
+      "en el bolsillo de tus usuarios.",
+    ],
     subheadline:
-      "Apps para iOS y Android, listas para App Store y Google Play. Rápidas, pulidas y pensadas para escalar.",
-    ctaPrimary: { label: "Cuéntanos tu idea", href: appsContactHref },
+      "Diseñamos y desarrollamos aplicaciones móviles para iOS y Android que combinan experiencia de usuario, ingeniería sólida y visión de producto. Desde una idea hasta las tiendas.",
+    ctaPrimary: {
+      label: "Cuéntanos tu idea",
+      href: appsContactHref,
+    },
     heroVisual: "apps",
   },
 
   capabilities: {
     eyebrow: "Qué construimos",
-    title: "Todo lo que tu app necesita para llegar lejos.",
+    title: "Apps diseñadas para crecer contigo.",
     description:
-      "Del diseño a las tiendas y más allá. Construimos apps que se sienten premium y siguen mejorando después del lanzamiento.",
+      "Desde la primera versión hasta miles de usuarios. Construimos productos móviles que se sienten premium, funcionan con fluidez y evolucionan junto a tu negocio.",
     items: [
       {
         icon: Smartphone,
         title: "iOS y Android",
         description:
-          "Una sola base de código, ambas tiendas. Tu app donde están tus clientes, sin duplicar esfuerzo.",
+          "Una misma solución para ambas plataformas, permitiéndote llegar a más usuarios sin duplicar esfuerzos.",
       },
       {
         icon: Palette,
-        title: "Diseño nativo",
+        title: "Experiencia de usuario",
         description:
-          "Interfaces premium y fluidas que se sienten como en casa en cada plataforma.",
+          "Interfaces modernas, intuitivas y cuidadas al detalle para ofrecer una experiencia que las personas disfruten usar.",
       },
       {
         icon: Server,
-        title: "Backend y APIs",
+        title: "Backend y servicios",
         description:
-          "La infraestructura que sostiene tu app: datos, autenticación y servicios listos para escalar.",
+          "Infraestructura, autenticación, APIs y almacenamiento preparados para crecer junto con tu aplicación.",
       },
       {
         icon: Store,
         title: "Publicación en tiendas",
         description:
-          "Te llevamos hasta App Store y Google Play, con todo el proceso de revisión resuelto.",
+          "Nos encargamos del proceso completo para que tu aplicación llegue a App Store y Google Play sin complicaciones.",
       },
       {
         icon: RefreshCw,
-        title: "Mantenimiento",
+        title: "Evolución continua",
         description:
-          "Actualizaciones, métricas y mejoras continuas para que tu app no se quede atrás.",
+          "Actualizaciones, métricas y nuevas funcionalidades para que tu producto siga creciendo después del lanzamiento.",
       },
     ],
   },
@@ -121,9 +127,12 @@ export const appsContent: SpokePageContent = {
   },
 
   finalCta: {
-    title: "¿Tienes una idea de app en mente?",
+    title: "¿Tienes una idea que merece convertirse en una app?",
     description:
-      "Cuéntanos qué quieres construir y la diseñamos con el mismo estándar de producto que el resto de nuestro trabajo. Sin compromiso, directo al grano.",
-    cta: { label: "Cuéntanos tu idea", href: appsContactHref },
+      "Cuéntanos qué quieres construir. Te ayudaremos a transformar una idea, proceso o servicio en una experiencia móvil lista para llegar a tus usuarios.",
+    cta: {
+      label: "Cuéntanos tu idea",
+      href: appsContactHref,
+    },
   },
 };

@@ -27,56 +27,62 @@ const telecomContactHref = buildWhatsApp(whatsappMessages.telecom);
 
 export const telecomContent: SpokePageContent = {
   meta: {
-    title: "Software de Call Center y Telefonía Asterisk",
+    title: "Software de Call Center, PBX y Comunicación Omnicanal",
     description:
-      "Plataformas omnicanal sobre Asterisk: voz, WhatsApp, control de agentes y métricas en tiempo real. La potencia de un PBX empresarial, con una interfaz que da gusto usar.",
+      "Plataformas empresariales sobre Asterisk: voz, WhatsApp, agentes, métricas e integraciones. Toda tu operación de comunicación en un solo lugar.",
     canonical: "/telecomunicaciones",
   },
 
   hero: {
-    eyebrow: "Plataformas de telecomunicaciones",
-    headline: ["Software de call center", "que tu operación toma en serio."],
+    eyebrow: "Telecomunicaciones empresariales",
+    headline: [
+      "La infraestructura de comunicación",
+      "que tu operación necesita.",
+    ],
     subheadline:
-      "Construimos plataformas omnicanal sobre Asterisk: voz, WhatsApp, control de agentes y métricas en tiempo real. La potencia de un PBX empresarial, con una interfaz que da gusto usar.",
-    ctaPrimary: { label: "Cuéntanos tu operación", href: telecomContactHref },
+      "Construimos plataformas de voz, WhatsApp, atención omnicanal y monitoreo en tiempo real sobre tecnología probada como Asterisk. La robustez de un PBX empresarial con una experiencia moderna y fácil de usar.",
+    ctaPrimary: {
+      label: "Heblemos de tu operación",
+      href: telecomContactHref,
+    },
     heroVisual: "telecom",
   },
 
   capabilities: {
     eyebrow: "Qué construimos",
-    title: "Todo lo que tu operación telefónica necesita.",
+    title: "Todo lo que tu equipo necesita para atender mejor.",
     description:
-      "Desde la centralita hasta el tablero de métricas. Construimos cada pieza con la robustez de Asterisk y una interfaz pensada para quien la usa todos los días.",
+      "Desde la infraestructura de comunicación hasta la inteligencia operativa. Construimos soluciones conectadas que ayudan a tu organización a atender mejor, supervisar en tiempo real y tomar decisiones con mayor confianza.",
     items: [
       {
         icon: Server,
-        title: "Centrales PBX/Asterisk",
+        title: "PBX y Asterisk empresarial",
         description:
-          "Conmutadores y centralitas sobre Asterisk: troncales SIP, IVR, colas y grabación, listos para producción.",
+          "Conmutadores, IVRs, colas, grabaciones y troncales SIP listos para producción y diseñados para crecer contigo.",
       },
       {
         icon: MessagesSquare,
-        title: "Omnicanal voz+WhatsApp",
+        title: "Voz + WhatsApp omnicanal",
         description:
-          "Voz y WhatsApp en una sola bandeja, para que cada agente atienda todo desde un mismo lugar.",
+          "Todas las conversaciones en una sola plataforma para que tus agentes trabajen desde un único lugar.",
       },
       {
         icon: Headphones,
-        title: "Control de agentes",
+        title: "Gestión de agentes",
         description:
-          "Estados, colas, monitoreo en vivo y supervisión. Tu equipo bajo control, sin perderle el pulso a la operación.",
+          "Monitoreo en vivo, estados, colas, supervisión y control operativo para mantener la calidad del servicio.",
       },
       {
         icon: BarChart3,
-        title: "Métricas y reporting",
+        title: "Métricas y analítica",
         description:
-          "Tableros claros de llamadas, tiempos y desempeño para decidir con datos, no con corazonadas.",
+          "Indicadores claros de productividad, tiempos de atención y desempeño para tomar decisiones con datos.",
       },
       {
         icon: Plug,
-        title: "Integraciones a medida",
+        title: "Integraciones empresariales",
         description:
-          "Conectamos tu telefonía con CRMs, ERPs y las herramientas que ya usas. Nada de islas de información.",
+          "Conectamos telefonía, CRMs, ERPs y sistemas internos para eliminar silos de información.",
       },
     ],
   },
@@ -121,33 +127,41 @@ export const telecomContent: SpokePageContent = {
   },
 
   proof: {
-    eyebrow: "Prueba en producción",
-    title: "cc365, funcionando hoy.",
+    eyebrow: "Producto en producción",
+    title: "cc365, construido para operar hoy.",
     description:
-      "Lo que Issabel resuelve en funcionalidad, cc365 lo lleva más allá: misma robustez de Asterisk pero bonito y usable.",
+      "No es una idea ni un prototipo. cc365 es nuestra plataforma de telecomunicaciones empresariales, diseñada para ofrecer la robustez de Asterisk con una experiencia moderna que los equipos realmente disfrutan usar.",
     product: {
       name: "cc365",
-      category: "Plataforma de call center omnicanal",
+      category: "Plataforma omnicanal empresarial",
       status: "live",
     },
     highlights: [
-      "Centralita Asterisk lista para producción",
-      "Atención por voz y WhatsApp en una sola bandeja",
-      "Control de agentes y colas en tiempo real",
-      "Reportes claros de toda la operación",
+      "Infraestructura Asterisk lista para producción",
+      "Voz y WhatsApp en una sola bandeja",
+      "Gestión de agentes y colas en tiempo real",
+      "Métricas operativas claras y accionables",
     ],
-    // Swap-ready gallery: captions only, screenshots land later (see ProofShot.src).
     shots: [
-      { caption: "Bandeja omnicanal — voz y WhatsApp en un solo lugar" },
-      { caption: "Panel de agentes y colas en tiempo real" },
-      { caption: "Reportes y métricas de la operación" },
+      {
+        caption: "Bandeja omnicanal para voz y WhatsApp",
+      },
+      {
+        caption: "Supervisión de agentes y colas en tiempo real",
+      },
+      {
+        caption: "Indicadores y reportes de toda la operación",
+      },
     ],
   },
 
   finalCta: {
-    title: "¿Tu call center merece mejor software?",
+    title: "¿Tu operación merece mejor tecnología?",
     description:
-      "Cuéntanos cómo opera tu equipo hoy y te mostramos cómo se vería sobre cc365. Sin compromiso, directo al grano.",
-    cta: { label: "Cuéntanos tu operación", href: telecomContactHref },
+      "Cuéntanos cómo funciona hoy tu comunicación. Analizamos tu proceso y te mostramos cómo podría operar sobre una plataforma moderna, escalable y diseñada para crecer contigo.",
+    cta: {
+      label: "Heblemos de tu operación",
+      href: telecomContactHref,
+    },
   },
 };

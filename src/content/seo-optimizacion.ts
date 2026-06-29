@@ -27,61 +27,67 @@ const seoContactHref = buildWhatsApp(whatsappMessages.seo);
 
 export const seoContent: SpokePageContent = {
   meta: {
-    title: "SEO y Optimización de Rendimiento Web",
+    title: "SEO, Posicionamiento Web y Optimización de Rendimiento",
     description:
-      "Posicionamiento orgánico, optimización de rendimiento y mejora de sitios existentes. Tu presencia digital trabajando para tu negocio.",
+      "Ayudamos a que tu sitio sea más rápido, más visible y más efectivo para generar oportunidades de negocio.",
     canonical: "/seo-optimizacion",
   },
 
   hero: {
-    eyebrow: "SEO y optimización",
-    headline: ["Que te encuentren primero.", "Que tu sitio vuele."],
+    eyebrow: "SEO • Optimización",
+    headline: [
+      "Haz que te encuentren",
+      "antes que a tu competencia.",
+    ],
     subheadline:
-      "Posicionamiento orgánico, optimización de rendimiento y mejora de sitios existentes. Tu presencia digital trabajando para tu negocio.",
-    ctaPrimary: { label: "Auditemos tu sitio", href: seoContactHref },
+      "Mejoramos la visibilidad, velocidad y rendimiento de tu sitio para atraer más visitantes, generar más oportunidades y convertir mejor.",
+    ctaPrimary: {
+      label: "Auditemos tu sitio",
+      href: seoContactHref,
+    },
     heroVisual: "seo",
   },
 
   capabilities: {
     eyebrow: "Qué optimizamos",
-    title: "Tu presencia digital, trabajando para tu negocio.",
+    title: "Tu sitio debería trabajar para tu negocio.",
     description:
-      "Desde la estructura técnica hasta el contenido que posiciona. Afinamos cada capa para que tu sitio cargue rápido y suba en buscadores.",
+      "Desde la velocidad de carga hasta la estructura técnica y el posicionamiento orgánico. Optimizamos cada capa para que tu presencia digital genere resultados reales.",
     items: [
       {
         icon: Search,
         title: "SEO técnico",
         description:
-          "Estructura, metadatos, indexación y Core Web Vitals: las bases que los buscadores premian.",
+          "Indexación, estructura, metadatos y Core Web Vitals para construir una base sólida que los buscadores puedan entender y posicionar.",
       },
       {
         icon: Gauge,
-        title: "Optimización de rendimiento",
+        title: "Rendimiento web",
         description:
-          "Sitios que cargan rápido y se sienten ágiles, en cualquier dispositivo y conexión.",
+          "Sitios rápidos, fluidos y optimizados para ofrecer una mejor experiencia en cualquier dispositivo.",
       },
       {
         icon: TrendingUp,
-        title: "Contenido y posicionamiento",
+        title: "Posicionamiento orgánico",
         description:
-          "Keywords y autoridad de dominio para ganar terreno frente a tu competencia.",
+          "Estrategias orientadas a ganar visibilidad frente a tu competencia y atraer tráfico relevante de forma constante.",
       },
       {
         icon: ClipboardCheck,
-        title: "Auditoría de sitios actuales",
+        title: "Auditoría y mejora continua",
         description:
-          "Revisamos tu sitio actual a fondo y trazamos el plan para mejorarlo, sin rehacerlo desde cero.",
+          "Analizamos tu sitio actual, detectamos oportunidades y definimos un plan claro para mejorar sin necesidad de empezar desde cero.",
       },
       {
         icon: LineChart,
-        title: "Analítica",
+        title: "Analítica y conversión",
         description:
-          "Medimos tráfico y conversión para que cada decisión tenga datos detrás, no suposiciones.",
+          "Medimos tráfico, comportamiento y conversiones para entender qué funciona y dónde existe potencial de crecimiento.",
       },
     ],
   },
 
-  useCases: {
+   useCases: {
     eyebrow: "Casos de uso",
     title: "Negocios que necesitan ser encontrados.",
     description:
@@ -121,9 +127,12 @@ export const seoContent: SpokePageContent = {
   },
 
   finalCta: {
-    title: "¿Tu sitio no aparece donde debería?",
+    title: "¿Tu sitio está generando los resultados que debería?",
     description:
-      "Cuéntanos tus objetivos y auditamos tu sitio para mostrarte qué lo está frenando y cómo despegarlo. Sin compromiso, directo al grano.",
-    cta: { label: "Auditemos tu sitio", href: seoContactHref },
+      "Analizamos tu presencia digital, identificamos qué está frenando su crecimiento y te mostramos oportunidades concretas para mejorar visibilidad, rendimiento y conversión.",
+    cta: {
+      label: "Auditemos tu sitio",
+      href: seoContactHref,
+    },
   },
 };

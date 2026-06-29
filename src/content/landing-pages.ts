@@ -49,43 +49,45 @@ type LandingPagesContent = {
 
 export const landingPagesContent: LandingPagesContent = {
   hero: {
-    eyebrow: "Product studio · Landings · Software · IA",
-    headline: ["Creamos landings premium", "y software a la medida"],
+    eyebrow: "Landings Premium",
+    headline: ["Creamos experiencias digitales", "que impulsan negocios."],
     subheadline:
-      "Diseñamos experiencias digitales modernas para negocios que quieren verse mejor, vender más y escalar con tecnología real.",
+      "Landing pages premium para negocios que quieren verse mejor, generar confianza y convertir más. El primer paso hacia una presencia digital seria.",
     ctaPrimary: { label: "Quiero mi landing", href: contactHrefLanding },
     ctaSecondary: { label: "Ver proyectos", href: "#proyectos" },
-    supporting: ["estrategia", "diseño", "código", "IA"],
-    heroVisual: "landing",
+    // supporting: ["estrategia", "diseño", "código", "IA"],
+    heroVisual: "landing"
   },
 
   positioning: {
     title:
       "Landings que no parecen plantillas. Software que no se queda en promesas.",
     description:
-      "En Codefy combinamos diseño, estrategia y desarrollo para crear productos digitales que se sienten premium desde el primer scroll.",
+      "En Codefy combinamos diseño, estrategia y desarrollo para crear experiencias digitales que se sienten premium desde el primer scroll y generan resultados desde el primer clic.",
     items: [
       {
         icon: Sparkles,
         title: "Diseño premium",
-        description: "Interfaces modernas, limpias y cuidadas al detalle.",
+        description:
+          "Interfaces modernas, limpias y cuidadas al detalle para transmitir confianza desde el primer vistazo.",
       },
       {
         icon: Code2,
         title: "Desarrollo moderno",
-        description: "Código sólido, escalable y preparado para crecer.",
+        description:
+          "Código sólido, rápido y preparado para crecer junto con tu negocio.",
       },
       {
         icon: Bot,
         title: "IA aplicada",
         description:
-          "Usamos herramientas de IA para acelerar procesos sin sacrificar calidad.",
+          "Integramos inteligencia artificial en tus productos para automatizar tareas y crear nuevas oportunidades de crecimiento.",
       },
       {
         icon: Target,
         title: "Visión de producto",
         description:
-          "No solo construimos pantallas, pensamos en negocio, conversión y experiencia.",
+          "Entendemos tus objetivos antes de escribir código. Diseñamos soluciones que generan valor real para tu negocio.",
       },
     ],
   },
@@ -93,18 +95,18 @@ export const landingPagesContent: LandingPagesContent = {
   services: {
     title: "Servicios para lanzar, validar y escalar",
     description:
-      "Empezamos con landings de alto impacto, pero podemos acompañarte hasta convertir tu idea en un producto digital completo.",
+      "Podemos empezar con una landing de alto impacto y acompañarte hasta convertir tu idea en una plataforma completa.",
     featured: {
       icon: Rocket,
       eyebrow: "Servicio estrella",
       title: "Landing Page Premium",
       description:
-        "El punto de entrada perfecto para trabajar con Codefy. Creamos landings rápidas, elegantes y orientadas a conversión para validar, vender o presentar tu negocio de forma profesional.",
+        "La forma más rápida de lanzar una presencia digital profesional. Diseñamos landing pages elegantes, rápidas y enfocadas en convertir visitantes en clientes.",
       features: [
         "Diseño responsive",
         "Copy orientado a conversión",
         "Formulario o WhatsApp",
-        "Analytics básico",
+        "SEO",
         "Optimización visual",
         "Deploy listo para producción",
       ],
@@ -115,19 +117,19 @@ export const landingPagesContent: LandingPagesContent = {
         icon: LayoutDashboard,
         title: "Software a la medida",
         description:
-          "Aplicaciones web, dashboards, sistemas internos, módulos administrativos y plataformas SaaS construidas con arquitectura moderna.",
+          "Sistemas internos, dashboards, módulos administrativos y plataformas SaaS construidas alrededor de tu operación.",
       },
       {
         icon: Compass,
         title: "Consultoría tecnológica",
         description:
-          "Te ayudamos a definir arquitectura, stack, roadmap técnico y estrategia para construir productos digitales sólidos.",
+          "Te ayudamos a definir arquitectura, roadmap técnico y estrategia para construir productos digitales sólidos.",
       },
       {
         icon: Workflow,
         title: "Automatización e IA",
         description:
-          "Creamos flujos inteligentes, integraciones, asistentes, bots y procesos automatizados para mejorar la operación de tu negocio.",
+          "Asistentes, automatizaciones, integraciones y flujos inteligentes que ahorran tiempo y reducen trabajo manual.",
       },
     ],
   },
@@ -135,14 +137,14 @@ export const landingPagesContent: LandingPagesContent = {
   portfolio: {
     title: "Proyectos que muestran lo que podemos construir",
     description:
-      "Cada proyecto es una oportunidad para demostrar que una buena experiencia digital no solo debe verse bien, también debe funcionar, convertir y escalar.",
+      "Cada proyecto demuestra que una experiencia digital no solo debe verse bien: también debe funcionar, convertir y crecer con el negocio.",
     featured: {
       name: "Anny Studio",
       category: "Landing premium",
       description:
-        "Landing para estudio fotográfico con estética pastel, playa y experiencia visual cinematográfica.",
+        "Experiencia digital para una marca de fotografía especializada en bodas y momentos memorables.",
       story:
-        "Diseñamos una experiencia que se siente como una sesión de fotos: paleta pastel, ritmo cinematográfico y un flujo claro hacia la reserva. El objetivo no era una página bonita, era convertir visitantes en clientes.",
+        "Diseñamos una experiencia que se siente como una sesión fotográfica: paleta pastel, ritmo cinematográfico y un flujo claro hacia la reserva. El objetivo nunca fue crear una página bonita; fue convertir visitantes en clientes.",
       status: "live",
       accent: "#f0abfc",
       accent2: "#22d3ee",
@@ -157,16 +159,16 @@ export const landingPagesContent: LandingPagesContent = {
         name: "CC365",
         category: "SaaS / Omnicanal",
         description:
-          "Plataforma omnicanal para atención, voz y WhatsApp con enfoque SaaS.",
+          "Plataforma omnicanal para voz, WhatsApp y atención empresarial construida con enfoque SaaS.",
         status: "live",
         accent: "#818cf8",
         accent2: "#06b6d4",
       },
       {
         name: "ChilaKillers",
-        category: "Landing / Food brand",
+        category: "Landing / Food Brand",
         description:
-          "Concepto visual para dark kitchen especializada en chilaquiles con enfoque de conversión local.",
+          "Landing enfocada en conversión local para una dark kitchen especializada en chilaquiles.",
         status: "live",
         accent: "#fb923c",
         accent2: "#facc15",
@@ -175,7 +177,7 @@ export const landingPagesContent: LandingPagesContent = {
         name: "Próximamente",
         category: "Nuevos verticales",
         description:
-          "Soluciones para sector inmobiliario, automatización y software empresarial.",
+          "Automatización, software empresarial, inteligencia artificial y nuevas plataformas en desarrollo.",
         status: "soon",
         accent: "#94a3b8",
         accent2: "#475569",
@@ -187,10 +189,10 @@ export const landingPagesContent: LandingPagesContent = {
     title: "Un pequeño sello que conecta grandes proyectos",
     story: [
       "Miles de personas visitarán tu landing.",
-      "Algunos descubrirán quién la construyó.",
+      "Algunas descubrirán quién la construyó.",
     ],
     description:
-      "Por eso cada proyecto puede incluir un sello elegante y discreto: una firma que mantiene visible la calidad detrás del trabajo y conecta nuevos visitantes con nosotros.",
+      "Por eso cada proyecto puede incluir un sello elegante y discreto. Una firma que conecta nuevos visitantes con nosotros y mantiene visible la calidad detrás del trabajo.",
     badge: "Hecho con amor por Codefy",
   },
 
@@ -202,28 +204,28 @@ export const landingPagesContent: LandingPagesContent = {
         icon: Search,
         title: "Descubrimos",
         description:
-          "Entendemos tu negocio, objetivo, audiencia y estilo visual.",
+          "Entendemos tu negocio, tus objetivos, tu audiencia y qué quieres lograr.",
       },
       {
         number: "02",
         icon: PenTool,
         title: "Diseñamos",
         description:
-          "Creamos una propuesta visual premium alineada a tu marca.",
+          "Creamos una propuesta visual premium alineada con tu marca y tu mercado.",
       },
       {
         number: "03",
         icon: Hammer,
         title: "Construimos",
         description:
-          "Desarrollamos tu landing con buenas prácticas, responsive y optimizada.",
+          "Desarrollamos una landing rápida, responsive y optimizada para conversión.",
       },
       {
         number: "04",
         icon: Send,
         title: "Lanzamos",
         description:
-          "Publicamos, conectamos formularios, WhatsApp, analytics y dejamos todo listo.",
+          "Publicamos, conectamos herramientas, configuramos métricas y dejamos todo listo para crecer.",
       },
     ],
   },
@@ -273,7 +275,10 @@ export const landingPagesContent: LandingPagesContent = {
   finalCta: {
     title: "¿Listo para que tu negocio se vea como una marca premium?",
     description:
-      "Empecemos con una landing poderosa, rápida y bien diseñada. Después podemos escalarla a un sistema, dashboard o SaaS completo.",
-    cta: { label: "Quiero cotizar mi landing", href: contactHrefLanding },
+      "Empecemos con una landing poderosa, rápida y bien diseñada. Después podremos escalarla a sistemas internos, automatizaciones o incluso un SaaS completo.",
+    cta: {
+      label: "Quiero cotizar mi landing",
+      href: contactHrefLanding,
+    },
   },
 };

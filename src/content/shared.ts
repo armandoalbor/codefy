@@ -43,20 +43,20 @@ export const siteNav: NavEntry[] = [
 /** Primary CTA per route, keyed by pathname. */
 export const routeCta: Record<string, CtaSpec> = {
   "/": {
-    label: "Cuéntanos tu proyecto",
+    label: "Hablemos de tu idea",
     href: buildWhatsApp(whatsappMessages.general),
   },
   "/landing-pages": { label: "Cotizar landing", href: contactHrefLanding },
   "/telecomunicaciones": {
-    label: "Cuéntanos tu operación",
+    label: "Optimiza tu comunicación",
     href: buildWhatsApp(whatsappMessages.telecom),
   },
   "/software-a-la-medida": {
-    label: "Cuéntanos tu proyecto",
+    label: "Hablemos de tu idea",
     href: buildWhatsApp(whatsappMessages.software),
   },
   "/apps-moviles": {
-    label: "Cuéntanos tu idea",
+    label: "Hablemos de tu idea",
     href: buildWhatsApp(whatsappMessages.apps),
   },
   "/seo-optimizacion": {
@@ -73,5 +73,5 @@ export const footerChrome = {
     { label: "Landing Pages", href: "/landing-pages" },
     { label: "Telecomunicaciones", href: "/telecomunicaciones" },
   ],
-  legal: "© 2026 Codefy. Hecho con amor por Codefy.",
+  legal: "© 2026 Codefy",
 } as const;
