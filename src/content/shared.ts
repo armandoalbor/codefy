@@ -8,7 +8,7 @@
  */
 import type { CtaSpec } from "./types";
 
-const WHATSAPP_PHONE = "525531140480";
+const WHATSAPP_PHONE = "525642742627";
 
 /** Builds a wa.me deep link with a URL-encoded prefilled message. */
 export function buildWhatsApp(message: string): string {
